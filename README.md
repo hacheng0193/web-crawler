@@ -1,6 +1,6 @@
 # Search crawler MVP
 
-這是一個零外部依賴的 search-engine crawler MVP：使用 100 個 curated seed URL，預設最多執行 600 秒（10 分鐘），遵守 robots.txt，對同一 host 保持請求間隔，並把結果寫成 JSONL。
+這是一個零外部依賴的 search-engine crawler MVP：使用 100 個 curated seed URL，預設最多執行 600 秒（10 分鐘），遵守 robots.txt，對同一 host 保持請求間隔，並將 discovered 與 crawled 分開保存。
 
 ## 執行
 
@@ -33,8 +33,14 @@ python3 crawler.py --runtime-seconds 30 --max-pages 100 --output-dir output-smok
 
 輸出：
 
-- `output/crawl_results.jsonl`：每行一筆頁面結果，含 URL、status、title、depth、parent URL、發現連結數與錯誤
-- `output/crawl_summary.json`：本次執行摘要
+- `output/discovered.jsonl`：每發現一個新 URL 就立即 append 一行；可用行數計算 total discovered URLs
+- `output/crawled.jsonl`：每次 fetch 完成就立即 append 一行，包含 `success`、status、title、depth、parent URL、發現連結數與錯誤
+- `output/discovered_pending.json`：執行結束時仍待處理的 discovered dict；已完成 fetch 的 URL 會從這個 pending dict 移除
+- `output/crawl_summary.json`：本次執行摘要，直接包含 `total_discovered` 與 `successful_crawled`
+
+`discovered.jsonl` 是永久的 discovery event log，因此即使 URL 後來被移入 crawled，仍保留在檔案中，方便計算 total discovered。`discovered_pending.json` 則代表執行結束時尚未 crawl 的 URL。
+
+每一筆 discovered 與 crawled 記錄都會立即 `flush()`；因此中途停止時，已完成的 fetch 結果仍會保留，不必等到整個 10 分鐘結束。
 
 ## 測試
 

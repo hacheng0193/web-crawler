@@ -1,8 +1,10 @@
 import json
+import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
-from crawler import LinkParser, load_seeds, normalize_url
+from crawler import Crawler, LinkParser, load_seeds, normalize_url
 
 
 class CrawlerTests(unittest.TestCase):
@@ -28,6 +30,35 @@ class CrawlerTests(unittest.TestCase):
     def test_seed_file_is_valid_json(self):
         with (Path(__file__).parents[1] / "seed_urls.json").open(encoding="utf-8") as handle:
             self.assertIsInstance(json.load(handle), list)
+
+    def test_discovered_and_crawled_are_persisted_separately(self):
+        seeds = [{"url": "https://example.com/", "priority": 10}]
+        html = '<title>Example</title><a href="/next">Next</a>'
+        with tempfile.TemporaryDirectory() as directory:
+            with patch.object(Crawler, "_allowed_by_robots", return_value=True), patch.object(
+                Crawler, "_fetch", return_value=(200, "text/html", html, None)
+            ):
+                summary = Crawler(
+                    seeds,
+                    Path(directory),
+                    runtime_seconds=2,
+                    max_pages=1,
+                    workers=1,
+                    per_host_delay=0,
+                    timeout=1,
+                    max_depth=1,
+                    live_output=False,
+                ).run()
+
+            discovered_lines = (Path(directory) / "discovered.jsonl").read_text(encoding="utf-8").splitlines()
+            crawled_lines = (Path(directory) / "crawled.jsonl").read_text(encoding="utf-8").splitlines()
+            pending = json.loads((Path(directory) / "discovered_pending.json").read_text(encoding="utf-8"))
+
+            self.assertEqual(summary["total_discovered"], 2)
+            self.assertEqual(summary["successful_crawled"], 1)
+            self.assertEqual(len(discovered_lines), 2)
+            self.assertEqual(len(crawled_lines), 1)
+            self.assertEqual(list(pending), ["https://example.com/next"])
 
 
 if __name__ == "__main__":

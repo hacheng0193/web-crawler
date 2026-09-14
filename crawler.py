@@ -6,7 +6,6 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-import os
 import queue
 import re
 import threading
@@ -94,7 +93,26 @@ class CrawlResult:
     links_found: int
     fetched_at: str
     elapsed_ms: int
+    success: bool = False
     error: str | None = None
+
+
+class JsonlWriter:
+    """Thread-safe append-only writer; each record is flushed immediately."""
+
+    def __init__(self, path: Path) -> None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        self.handle = path.open("w", encoding="utf-8")
+        self.lock = threading.Lock()
+
+    def write(self, record: dict[str, Any]) -> None:
+        with self.lock:
+            self.handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+            self.handle.flush()
+
+    def close(self) -> None:
+        with self.lock:
+            self.handle.close()
 
 
 class Crawler:
@@ -109,8 +127,15 @@ class Crawler:
         self.max_depth = max(0, max_depth)
         self.live_output = live_output
         self.frontier: queue.PriorityQueue[tuple[int, int, str, int, str | None]] = queue.PriorityQueue()
-        self.seen: set[str] = set()
-        self.results: list[CrawlResult] = []
+        # `discovered` is the pending discovered set. Completed URLs are moved
+        # into `crawled`; `all_discovered` keeps deduplication and the metric
+        # count independent from the pending set.
+        self.discovered: dict[str, dict[str, Any]] = {}
+        self.all_discovered: set[str] = set()
+        self.crawled: dict[str, dict[str, Any]] = {}
+        self.total_discovered = 0
+        self.successful_crawled = 0
+        self.failed_crawled = 0
         self.host_last_fetch: dict[str, float] = {}
         self.robots: dict[str, RobotFileParser | None] = {}
         self.counter = 0
@@ -124,6 +149,8 @@ class Crawler:
         self.logger = logging.getLogger("crawler")
         self.seed_count = 0
         self.claimed_pages = 0
+        self.discovered_writer = JsonlWriter(self.output_dir / "discovered.jsonl")
+        self.crawled_writer = JsonlWriter(self.output_dir / "crawled.jsonl")
         for seed in seeds:
             url = normalize_url(str(seed.get("url", "")))
             if url:
@@ -140,13 +167,24 @@ class Crawler:
         normalized = normalize_url(url)
         if not normalized:
             return False
+        discovered_record = {
+            "url": normalized,
+            "priority": priority,
+            "depth": depth,
+            "parent_url": parent_url,
+            "discovered_at": datetime.now(timezone.utc).isoformat(),
+            "source": event,
+        }
         with self.state_lock:
-            if normalized in self.seen or self.stop_event.is_set():
+            if normalized in self.all_discovered or self.stop_event.is_set():
                 return False
-            self.seen.add(normalized)
+            self.all_discovered.add(normalized)
+            self.discovered[normalized] = discovered_record
+            self.total_discovered += 1
             self.counter += 1
             # PriorityQueue is min-first, so negate the user-facing priority.
             self.frontier.put((-priority, self.counter, normalized, depth, parent_url))
+        self.discovered_writer.write(discovered_record)
         self._emit(f"[{event.upper()}] depth={depth} {normalized}")
         return True
 
@@ -220,6 +258,9 @@ class Crawler:
                 with self.result_lock:
                     if self.claimed_pages >= self.max_pages:
                         self.stop_event.set()
+                        # Keep an unclaimed URL represented in the frontier;
+                        # it remains pending rather than silently disappearing.
+                        self.frontier.put((_priority, _order, url, depth, parent_url))
                         continue
                     self.claimed_pages += 1
                 if not self._allowed_by_robots(url):
@@ -241,10 +282,33 @@ class Crawler:
                 self.frontier.task_done()
 
     def _record(self, url: str, status: int | None, title: str, content_type: str, depth: int, parent_url: str | None, links_found: int, started: float, error: str | None = None) -> None:
-        result = CrawlResult(url, status, title, content_type, depth, parent_url, links_found, datetime.now(timezone.utc).isoformat(), int((time.monotonic() - started) * 1000), error)
+        success = error is None and status is not None and 200 <= status < 400
+        result = CrawlResult(
+            url=url,
+            status=status,
+            title=title,
+            content_type=content_type,
+            depth=depth,
+            parent_url=parent_url,
+            links_found=links_found,
+            fetched_at=datetime.now(timezone.utc).isoformat(),
+            elapsed_ms=int((time.monotonic() - started) * 1000),
+            success=success,
+            error=error,
+        )
+        result_record = result.__dict__.copy()
         with self.result_lock:
-            self.results.append(result)
-            result_number = len(self.results)
+            self.crawled[url] = result_record
+            if success:
+                self.successful_crawled += 1
+            else:
+                self.failed_crawled += 1
+            result_number = len(self.crawled)
+        with self.state_lock:
+            self.discovered.pop(url, None)
+        # Persist every completed fetch immediately so a process interruption
+        # does not discard the metric data already collected.
+        self.crawled_writer.write(result_record)
         status_text = str(status) if status is not None else "ERR"
         suffix = f" error={error}" if error else ""
         self._emit(f"[FETCHED {result_number}/{self.max_pages}] status={status_text} depth={depth} {url}{suffix}")
@@ -259,32 +323,48 @@ class Crawler:
             if time.monotonic() >= self.deadline:
                 self.stop_event.set()
                 break
-            time.sleep(0.1)
+            time.sleep(5)
         self.stop_event.set()
         for thread in threads:
             thread.join(timeout=self.timeout + 1)
         elapsed = round(time.monotonic() - started, 3)
+        with self.result_lock:
+            crawled_attempts = len(self.crawled)
+            successful_crawled = self.successful_crawled
+            failed_crawled = self.failed_crawled
+        with self.state_lock:
+            pending_discovered = len(self.discovered)
         summary = {
             "started_at": started_at.isoformat(),
             "finished_at": datetime.now(timezone.utc).isoformat(),
             "runtime_seconds": elapsed,
             "configured_runtime_seconds": self.runtime_seconds,
             "seed_count": self.seed_count,
-            "pages_recorded": len(self.results),
+            "total_discovered": self.total_discovered,
+            "crawled_attempts": crawled_attempts,
+            "successful_crawled": successful_crawled,
+            "failed_crawled": failed_crawled,
+            "pending_discovered": pending_discovered,
+            "pages_recorded": crawled_attempts,
             "frontier_remaining": self.frontier.qsize(),
             "robots_hosts_cached": len(self.robots),
             "workers": self.workers,
             "max_depth": self.max_depth,
         }
-        self._write_outputs(summary)
+        try:
+            self._write_outputs(summary)
+        finally:
+            self.discovered_writer.close()
+            self.crawled_writer.close()
         return summary
 
     def _write_outputs(self, summary: dict[str, Any]) -> None:
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        with (self.output_dir / "crawl_results.jsonl").open("w", encoding="utf-8") as handle:
-            for result in self.results:
-                handle.write(json.dumps(result.__dict__, ensure_ascii=False) + "\n")
+        with (self.output_dir / "discovered_pending.json").open("w", encoding="utf-8") as handle:
+            json.dump(self.discovered, handle, ensure_ascii=False, indent=2)
         with (self.output_dir / "crawl_summary.json").open("w", encoding="utf-8") as handle:
+            json.dump(summary, handle, ensure_ascii=False, indent=2)
+        with (Path("metrics") / f"crawl_summary-{self.output_dir.name}.json").open("w", encoding="utf-8") as handle:
             json.dump(summary, handle, ensure_ascii=False, indent=2)
 
 
@@ -301,13 +381,13 @@ def load_seeds(path: Path) -> list[dict[str, Any]]:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the 100-seed search crawler MVP.")
     parser.add_argument("--seed-file", type=Path, default=Path(__file__).with_name("seed_urls.json"))
-    parser.add_argument("--output-dir", type=Path, default=Path("output"))
-    parser.add_argument("--runtime-seconds", type=int, default=600, help="hard runtime cap; default: 600 (10 minutes)")
-    parser.add_argument("--max-pages", type=int, default=2000)
+    parser.add_argument("--output-dir", type=Path, default=Path(f"output-{int(time.time())}"))
+    parser.add_argument("--runtime-seconds", type=int, default=300, help="hard runtime cap; default: 300 (5 minutes)")
+    parser.add_argument("--max-pages", type=int, default=10000)
     parser.add_argument("--workers", type=int, default=8)
-    parser.add_argument("--per-host-delay", type=float, default=1.0)
+    parser.add_argument("--per-host-delay", type=float, default=5.0)
     parser.add_argument("--timeout", type=float, default=12.0)
-    parser.add_argument("--max-depth", type=int, default=2)
+    parser.add_argument("--max-depth", type=int, default=3)
     parser.add_argument("--no-live", action="store_true", help="disable live SEED/NEW/FETCHED URL output")
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()

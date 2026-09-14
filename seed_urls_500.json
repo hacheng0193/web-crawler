@@ -1,0 +1,4302 @@
+[
+  {
+    "url": "https://www.wikipedia.org/",
+    "domain": "wikipedia.org",
+    "priority": 10,
+    "category": "encyclopedia",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.wiktionary.org/",
+    "domain": "wiktionary.org",
+    "priority": 9,
+    "category": "encyclopedia",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.wikibooks.org/",
+    "domain": "wikibooks.org",
+    "priority": 9,
+    "category": "encyclopedia",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.wikinews.org/",
+    "domain": "wikinews.org",
+    "priority": 9,
+    "category": "encyclopedia",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.britannica.com/",
+    "domain": "britannica.com",
+    "priority": 8,
+    "category": "encyclopedia",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.bbc.com/",
+    "domain": "bbc.com",
+    "priority": 10,
+    "category": "news",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.reuters.com/",
+    "domain": "reuters.com",
+    "priority": 10,
+    "category": "news",
+    "max_depth": 2
+  },
+  {
+    "url": "https://apnews.com/",
+    "domain": "apnews.com",
+    "priority": 10,
+    "category": "news",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.npr.org/",
+    "domain": "npr.org",
+    "priority": 9,
+    "category": "news",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.theguardian.com/",
+    "domain": "theguardian.com",
+    "priority": 9,
+    "category": "news",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.nytimes.com/",
+    "domain": "nytimes.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.washingtonpost.com/",
+    "domain": "washingtonpost.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.aljazeera.com/",
+    "domain": "aljazeera.com",
+    "priority": 9,
+    "category": "news",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.dw.com/",
+    "domain": "dw.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.france24.com/",
+    "domain": "france24.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 2
+  },
+  {
+    "url": "https://abcnews.go.com/",
+    "domain": "abcnews.go.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.cbsnews.com/",
+    "domain": "cbsnews.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.nbcnews.com/",
+    "domain": "nbcnews.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.politico.com/",
+    "domain": "politico.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.theatlantic.com/",
+    "domain": "theatlantic.com",
+    "priority": 7,
+    "category": "news",
+    "max_depth": 1
+  },
+  {
+    "url": "https://github.com/",
+    "domain": "github.com",
+    "priority": 10,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://gitlab.com/",
+    "domain": "gitlab.com",
+    "priority": 9,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://stackoverflow.com/",
+    "domain": "stackoverflow.com",
+    "priority": 10,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://superuser.com/",
+    "domain": "superuser.com",
+    "priority": 8,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://serverfault.com/",
+    "domain": "serverfault.com",
+    "priority": 8,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://developer.mozilla.org/",
+    "domain": "developer.mozilla.org",
+    "priority": 10,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://web.dev/",
+    "domain": "web.dev",
+    "priority": 9,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.w3.org/",
+    "domain": "w3.org",
+    "priority": 9,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.python.org/",
+    "domain": "python.org",
+    "priority": 9,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://docs.python.org/3/",
+    "domain": "docs.python.org",
+    "priority": 9,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.rust-lang.org/",
+    "domain": "rust-lang.org",
+    "priority": 8,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://go.dev/",
+    "domain": "go.dev",
+    "priority": 8,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://nodejs.org/",
+    "domain": "nodejs.org",
+    "priority": 8,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.npmjs.com/",
+    "domain": "npmjs.com",
+    "priority": 8,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.docker.com/",
+    "domain": "docker.com",
+    "priority": 7,
+    "category": "technology",
+    "max_depth": 1
+  },
+  {
+    "url": "https://kubernetes.io/",
+    "domain": "kubernetes.io",
+    "priority": 8,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.linux.org/",
+    "domain": "linux.org",
+    "priority": 7,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.apache.org/",
+    "domain": "apache.org",
+    "priority": 7,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://nginx.org/",
+    "domain": "nginx.org",
+    "priority": 7,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.postgresql.org/",
+    "domain": "postgresql.org",
+    "priority": 8,
+    "category": "technology",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.mit.edu/",
+    "domain": "mit.edu",
+    "priority": 9,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.stanford.edu/",
+    "domain": "stanford.edu",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.harvard.edu/",
+    "domain": "harvard.edu",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.berkeley.edu/",
+    "domain": "berkeley.edu",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.cornell.edu/",
+    "domain": "cornell.edu",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.yale.edu/",
+    "domain": "yale.edu",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.princeton.edu/",
+    "domain": "princeton.edu",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.cmu.edu/",
+    "domain": "cmu.edu",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.edx.org/",
+    "domain": "edx.org",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.coursera.org/",
+    "domain": "coursera.org",
+    "priority": 7,
+    "category": "education",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.khanacademy.org/",
+    "domain": "khanacademy.org",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://openstax.org/",
+    "domain": "openstax.org",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://ocw.mit.edu/",
+    "domain": "ocw.mit.edu",
+    "priority": 9,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://archive.org/",
+    "domain": "archive.org",
+    "priority": 9,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.gutenberg.org/",
+    "domain": "gutenberg.org",
+    "priority": 8,
+    "category": "education",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.usa.gov/",
+    "domain": "usa.gov",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://data.gov/",
+    "domain": "data.gov",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.whitehouse.gov/",
+    "domain": "whitehouse.gov",
+    "priority": 7,
+    "category": "public",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.nasa.gov/",
+    "domain": "nasa.gov",
+    "priority": 9,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.noaa.gov/",
+    "domain": "noaa.gov",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.nih.gov/",
+    "domain": "nih.gov",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.cdc.gov/",
+    "domain": "cdc.gov",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.who.int/",
+    "domain": "who.int",
+    "priority": 9,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://europa.eu/",
+    "domain": "europa.eu",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.gov.uk/",
+    "domain": "gov.uk",
+    "priority": 9,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.canada.ca/",
+    "domain": "canada.ca",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.taiwan.gov.tw/",
+    "domain": "taiwan.gov.tw",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.japan.go.jp/",
+    "domain": "japan.go.jp",
+    "priority": 7,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.australia.gov.au/",
+    "domain": "australia.gov.au",
+    "priority": 7,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.un.org/",
+    "domain": "un.org",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.wikidata.org/",
+    "domain": "wikidata.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2
+  },
+  {
+    "url": "https://commons.wikimedia.org/",
+    "domain": "commons.wikimedia.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2
+  },
+  {
+    "url": "https://arxiv.org/",
+    "domain": "arxiv.org",
+    "priority": 9,
+    "category": "open-knowledge",
+    "max_depth": 2
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/",
+    "domain": "pubmed.ncbi.nlm.nih.gov",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.biorxiv.org/",
+    "domain": "biorxiv.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2
+  },
+  {
+    "url": "https://doi.org/",
+    "domain": "doi.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.crossref.org/",
+    "domain": "crossref.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2
+  },
+  {
+    "url": "https://openlibrary.org/",
+    "domain": "openlibrary.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.loc.gov/",
+    "domain": "loc.gov",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.si.edu/",
+    "domain": "si.edu",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.reddit.com/",
+    "domain": "reddit.com",
+    "priority": 8,
+    "category": "community",
+    "max_depth": 2
+  },
+  {
+    "url": "https://news.ycombinator.com/",
+    "domain": "news.ycombinator.com",
+    "priority": 9,
+    "category": "community",
+    "max_depth": 2
+  },
+  {
+    "url": "https://medium.com/",
+    "domain": "medium.com",
+    "priority": 7,
+    "category": "community",
+    "max_depth": 1
+  },
+  {
+    "url": "https://dev.to/",
+    "domain": "dev.to",
+    "priority": 8,
+    "category": "community",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.producthunt.com/",
+    "domain": "producthunt.com",
+    "priority": 7,
+    "category": "community",
+    "max_depth": 1
+  },
+  {
+    "url": "https://slashdot.org/",
+    "domain": "slashdot.org",
+    "priority": 7,
+    "category": "community",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.instructables.com/",
+    "domain": "instructables.com",
+    "priority": 7,
+    "category": "community",
+    "max_depth": 2
+  },
+  {
+    "url": "https://hackaday.com/",
+    "domain": "hackaday.com",
+    "priority": 7,
+    "category": "community",
+    "max_depth": 2
+  },
+  {
+    "url": "https://www.quora.com/",
+    "domain": "quora.com",
+    "priority": 6,
+    "category": "community",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.imdb.com/",
+    "domain": "imdb.com",
+    "priority": 7,
+    "category": "reference",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.goodreads.com/",
+    "domain": "goodreads.com",
+    "priority": 7,
+    "category": "reference",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.amazon.com/",
+    "domain": "amazon.com",
+    "priority": 5,
+    "category": "commerce",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.ebay.com/",
+    "domain": "ebay.com",
+    "priority": 5,
+    "category": "commerce",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.etsy.com/",
+    "domain": "etsy.com",
+    "priority": 5,
+    "category": "commerce",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.walmart.com/",
+    "domain": "walmart.com",
+    "priority": 5,
+    "category": "commerce",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.booking.com/",
+    "domain": "booking.com",
+    "priority": 5,
+    "category": "commerce",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.tripadvisor.com/",
+    "domain": "tripadvisor.com",
+    "priority": 5,
+    "category": "commerce",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.indeed.com/",
+    "domain": "indeed.com",
+    "priority": 5,
+    "category": "commerce",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.linkedin.com/",
+    "domain": "linkedin.com",
+    "priority": 4,
+    "category": "commerce",
+    "max_depth": 1
+  },
+  {
+    "url": "https://www.craigslist.org/",
+    "domain": "craigslist.org",
+    "priority": 5,
+    "category": "commerce",
+    "max_depth": 1
+  },
+  {
+    "url": "https://google.com/",
+    "domain": "google.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 1
+  },
+  {
+    "url": "https://facebook.com/",
+    "domain": "facebook.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 3
+  },
+  {
+    "url": "https://youtube.com/",
+    "domain": "youtube.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 9
+  },
+  {
+    "url": "https://apple.com/",
+    "domain": "apple.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 10
+  },
+  {
+    "url": "https://instagram.com/",
+    "domain": "instagram.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 11
+  },
+  {
+    "url": "https://mail.ru/",
+    "domain": "mail.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 12
+  },
+  {
+    "url": "https://ezviz7.com/",
+    "domain": "ezviz7.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 14
+  },
+  {
+    "url": "https://twitter.com/",
+    "domain": "twitter.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 15
+  },
+  {
+    "url": "https://dzen.ru/",
+    "domain": "dzen.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 16
+  },
+  {
+    "url": "https://office.com/",
+    "domain": "office.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 21
+  },
+  {
+    "url": "https://live.com/",
+    "domain": "live.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 22
+  },
+  {
+    "url": "https://azure.com/",
+    "domain": "azure.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 28
+  },
+  {
+    "url": "https://whatsapp.net/",
+    "domain": "whatsapp.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 32
+  },
+  {
+    "url": "https://microsoftonline.com/",
+    "domain": "microsoftonline.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 39
+  },
+  {
+    "url": "https://office.net/",
+    "domain": "office.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 40
+  },
+  {
+    "url": "https://netflix.com/",
+    "domain": "netflix.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 41
+  },
+  {
+    "url": "https://trafficmanager.net/",
+    "domain": "trafficmanager.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 42
+  },
+  {
+    "url": "https://cloud.microsoft/",
+    "domain": "cloud.microsoft",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 44
+  },
+  {
+    "url": "https://youtu.be/",
+    "domain": "youtu.be",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 46
+  },
+  {
+    "url": "https://wordpress.org/",
+    "domain": "wordpress.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 48
+  },
+  {
+    "url": "https://x.com/",
+    "domain": "x.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 49
+  },
+  {
+    "url": "https://skype.com/",
+    "domain": "skype.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 50
+  },
+  {
+    "url": "https://tiktok.com/",
+    "domain": "tiktok.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 54
+  },
+  {
+    "url": "https://whatsapp.com/",
+    "domain": "whatsapp.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 55
+  },
+  {
+    "url": "https://googledomains.com/",
+    "domain": "googledomains.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 57
+  },
+  {
+    "url": "https://roblox.com/",
+    "domain": "roblox.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 59
+  },
+  {
+    "url": "https://yahoo.com/",
+    "domain": "yahoo.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 60
+  },
+  {
+    "url": "https://googlesyndication.com/",
+    "domain": "googlesyndication.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 61
+  },
+  {
+    "url": "https://windowsupdate.com/",
+    "domain": "windowsupdate.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 64
+  },
+  {
+    "url": "https://spotify.com/",
+    "domain": "spotify.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 65
+  },
+  {
+    "url": "https://windows.net/",
+    "domain": "windows.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 66
+  },
+  {
+    "url": "https://ntp.org/",
+    "domain": "ntp.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 67
+  },
+  {
+    "url": "https://adobe.com/",
+    "domain": "adobe.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 68
+  },
+  {
+    "url": "https://msn.com/",
+    "domain": "msn.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 70
+  },
+  {
+    "url": "https://qq.com/",
+    "domain": "qq.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 74
+  },
+  {
+    "url": "https://zoom.us/",
+    "domain": "zoom.us",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 76
+  },
+  {
+    "url": "https://tiktokv.com/",
+    "domain": "tiktokv.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 81
+  },
+  {
+    "url": "https://akam.net/",
+    "domain": "akam.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 82
+  },
+  {
+    "url": "https://openai.com/",
+    "domain": "openai.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 84
+  },
+  {
+    "url": "https://baidu.com/",
+    "domain": "baidu.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 86
+  },
+  {
+    "url": "https://yandex.net/",
+    "domain": "yandex.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 87
+  },
+  {
+    "url": "https://vimeo.com/",
+    "domain": "vimeo.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 88
+  },
+  {
+    "url": "https://windows.com/",
+    "domain": "windows.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 90
+  },
+  {
+    "url": "https://gwfb.net/",
+    "domain": "gwfb.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 91
+  },
+  {
+    "url": "https://opera.com/",
+    "domain": "opera.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 92
+  },
+  {
+    "url": "https://nginx.com/",
+    "domain": "nginx.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 95
+  },
+  {
+    "url": "https://f5.com/",
+    "domain": "f5.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 97
+  },
+  {
+    "url": "https://yandex.ru/",
+    "domain": "yandex.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 99
+  },
+  {
+    "url": "https://capgemini.com/",
+    "domain": "capgemini.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 100
+  },
+  {
+    "url": "https://mozilla.org/",
+    "domain": "mozilla.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 102
+  },
+  {
+    "url": "https://wordpress.com/",
+    "domain": "wordpress.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 103
+  },
+  {
+    "url": "https://t.me/",
+    "domain": "t.me",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 104
+  },
+  {
+    "url": "https://achmea.nl/",
+    "domain": "achmea.nl",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 105
+  },
+  {
+    "url": "https://dellemc.com/",
+    "domain": "dellemc.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 106
+  },
+  {
+    "url": "https://actify.nl/",
+    "domain": "actify.nl",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 107
+  },
+  {
+    "url": "https://a2z.com/",
+    "domain": "a2z.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 108
+  },
+  {
+    "url": "https://ui.com/",
+    "domain": "ui.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 110
+  },
+  {
+    "url": "https://nic.ru/",
+    "domain": "nic.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 112
+  },
+  {
+    "url": "https://aws.dev/",
+    "domain": "aws.dev",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 113
+  },
+  {
+    "url": "https://office365.com/",
+    "domain": "office365.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 115
+  },
+  {
+    "url": "https://outlook.com/",
+    "domain": "outlook.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 119
+  },
+  {
+    "url": "https://github.io/",
+    "domain": "github.io",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 125
+  },
+  {
+    "url": "https://vk.com/",
+    "domain": "vk.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 127
+  },
+  {
+    "url": "https://unity3d.com/",
+    "domain": "unity3d.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 132
+  },
+  {
+    "url": "https://amazon.dev/",
+    "domain": "amazon.dev",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 134
+  },
+  {
+    "url": "https://kaspersky.com/",
+    "domain": "kaspersky.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 138
+  },
+  {
+    "url": "https://msftncsi.com/",
+    "domain": "msftncsi.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 140
+  },
+  {
+    "url": "https://dropbox.com/",
+    "domain": "dropbox.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 141
+  },
+  {
+    "url": "https://iiko.it/",
+    "domain": "iiko.it",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 143
+  },
+  {
+    "url": "https://miit.gov.cn/",
+    "domain": "miit.gov.cn",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 144
+  },
+  {
+    "url": "https://epicgames.com/",
+    "domain": "epicgames.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 145
+  },
+  {
+    "url": "https://vkuserphoto.ru/",
+    "domain": "vkuserphoto.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 146
+  },
+  {
+    "url": "https://static.microsoft/",
+    "domain": "static.microsoft",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 148
+  },
+  {
+    "url": "https://discord.gg/",
+    "domain": "discord.gg",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 149
+  },
+  {
+    "url": "https://forms.gle/",
+    "domain": "forms.gle",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 151
+  },
+  {
+    "url": "https://xiaomi.com/",
+    "domain": "xiaomi.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 153
+  },
+  {
+    "url": "https://steamserver.net/",
+    "domain": "steamserver.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 155
+  },
+  {
+    "url": "https://one.one/",
+    "domain": "one.one",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 156
+  },
+  {
+    "url": "https://gravatar.com/",
+    "domain": "gravatar.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 159
+  },
+  {
+    "url": "https://triplinkintl.com/",
+    "domain": "triplinkintl.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 161
+  },
+  {
+    "url": "https://tumblr.com/",
+    "domain": "tumblr.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 162
+  },
+  {
+    "url": "https://applovin.com/",
+    "domain": "applovin.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 163
+  },
+  {
+    "url": "https://webex.com/",
+    "domain": "webex.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 167
+  },
+  {
+    "url": "https://discord.com/",
+    "domain": "discord.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 168
+  },
+  {
+    "url": "https://paypal.com/",
+    "domain": "paypal.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 170
+  },
+  {
+    "url": "https://3gppnetwork.org/",
+    "domain": "3gppnetwork.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 171
+  },
+  {
+    "url": "https://mts.ru/",
+    "domain": "mts.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 175
+  },
+  {
+    "url": "https://adobe.io/",
+    "domain": "adobe.io",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 176
+  },
+  {
+    "url": "https://vk.ru/",
+    "domain": "vk.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 179
+  },
+  {
+    "url": "https://shopify.com/",
+    "domain": "shopify.com",
+    "priority": 8,
+    "category": "commerce",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 180
+  },
+  {
+    "url": "https://base.org/",
+    "domain": "base.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 181
+  },
+  {
+    "url": "https://telekom.net/",
+    "domain": "telekom.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 183
+  },
+  {
+    "url": "https://doctolib.net/",
+    "domain": "doctolib.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 185
+  },
+  {
+    "url": "https://macromedia.com/",
+    "domain": "macromedia.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 186
+  },
+  {
+    "url": "https://flickr.com/",
+    "domain": "flickr.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 187
+  },
+  {
+    "url": "https://nflxso.net/",
+    "domain": "nflxso.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 191
+  },
+  {
+    "url": "https://hichina.com/",
+    "domain": "hichina.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 194
+  },
+  {
+    "url": "https://creativecommons.org/",
+    "domain": "creativecommons.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 198
+  },
+  {
+    "url": "https://lsrelayaccess.com/",
+    "domain": "lsrelayaccess.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 199
+  },
+  {
+    "url": "https://vungle.com/",
+    "domain": "vungle.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 200
+  },
+  {
+    "url": "https://cnn.com/",
+    "domain": "cnn.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 202
+  },
+  {
+    "url": "https://oracle.com/",
+    "domain": "oracle.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 206
+  },
+  {
+    "url": "https://shifen.com/",
+    "domain": "shifen.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 208
+  },
+  {
+    "url": "https://t-online.de/",
+    "domain": "t-online.de",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 209
+  },
+  {
+    "url": "https://forbes.com/",
+    "domain": "forbes.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 213
+  },
+  {
+    "url": "https://sfx.ms/",
+    "domain": "sfx.ms",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 216
+  },
+  {
+    "url": "https://miui.com/",
+    "domain": "miui.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 217
+  },
+  {
+    "url": "https://playstation.net/",
+    "domain": "playstation.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 220
+  },
+  {
+    "url": "https://twitch.tv/",
+    "domain": "twitch.tv",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 221
+  },
+  {
+    "url": "https://gmail.com/",
+    "domain": "gmail.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 222
+  },
+  {
+    "url": "https://researchgate.net/",
+    "domain": "researchgate.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 223
+  },
+  {
+    "url": "https://ailawandorder.com/",
+    "domain": "ailawandorder.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 227
+  },
+  {
+    "url": "https://ozon.ru/",
+    "domain": "ozon.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 228
+  },
+  {
+    "url": "https://userapi.com/",
+    "domain": "userapi.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 229
+  },
+  {
+    "url": "https://azureedge.net/",
+    "domain": "azureedge.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 232
+  },
+  {
+    "url": "https://ubuntu.com/",
+    "domain": "ubuntu.com",
+    "priority": 8,
+    "category": "technology",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 233
+  },
+  {
+    "url": "https://bbc.co.uk/",
+    "domain": "bbc.co.uk",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 235
+  },
+  {
+    "url": "https://nist.gov/",
+    "domain": "nist.gov",
+    "priority": 8,
+    "category": "public",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 236
+  },
+  {
+    "url": "https://spectrum.com/",
+    "domain": "spectrum.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 237
+  },
+  {
+    "url": "https://stripe.com/",
+    "domain": "stripe.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 239
+  },
+  {
+    "url": "https://capcutapi.com/",
+    "domain": "capcutapi.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 241
+  },
+  {
+    "url": "https://canva.com/",
+    "domain": "canva.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 244
+  },
+  {
+    "url": "https://imcmdb.net/",
+    "domain": "imcmdb.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 245
+  },
+  {
+    "url": "https://wsdvs.com/",
+    "domain": "wsdvs.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 246
+  },
+  {
+    "url": "https://meraki.com/",
+    "domain": "meraki.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 248
+  },
+  {
+    "url": "https://sourceforge.net/",
+    "domain": "sourceforge.net",
+    "priority": 8,
+    "category": "technology",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 249
+  },
+  {
+    "url": "https://roku.com/",
+    "domain": "roku.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 251
+  },
+  {
+    "url": "https://android.com/",
+    "domain": "android.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 252
+  },
+  {
+    "url": "https://ripn.net/",
+    "domain": "ripn.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 254
+  },
+  {
+    "url": "https://yandexcloud.net/",
+    "domain": "yandexcloud.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 255
+  },
+  {
+    "url": "https://cisco.com/",
+    "domain": "cisco.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 256
+  },
+  {
+    "url": "https://comcast.net/",
+    "domain": "comcast.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 257
+  },
+  {
+    "url": "https://wikimedia.org/",
+    "domain": "wikimedia.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 258
+  },
+  {
+    "url": "https://telegram.org/",
+    "domain": "telegram.org",
+    "priority": 8,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 259
+  },
+  {
+    "url": "https://hcaptcha.com/",
+    "domain": "hcaptcha.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 261
+  },
+  {
+    "url": "https://ack.de/",
+    "domain": "ack.de",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 270
+  },
+  {
+    "url": "https://wixsite.com/",
+    "domain": "wixsite.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 271
+  },
+  {
+    "url": "https://forter.com/",
+    "domain": "forter.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 272
+  },
+  {
+    "url": "https://launchpad.net/",
+    "domain": "launchpad.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 274
+  },
+  {
+    "url": "https://ttvnw.net/",
+    "domain": "ttvnw.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 275
+  },
+  {
+    "url": "https://facebook.net/",
+    "domain": "facebook.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 276
+  },
+  {
+    "url": "https://mangosip.ru/",
+    "domain": "mangosip.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 277
+  },
+  {
+    "url": "https://ibm.com/",
+    "domain": "ibm.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 278
+  },
+  {
+    "url": "https://amon.tech/",
+    "domain": "amon.tech",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 279
+  },
+  {
+    "url": "https://telecid.ru/",
+    "domain": "telecid.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 283
+  },
+  {
+    "url": "https://arubanetworks.com/",
+    "domain": "arubanetworks.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 286
+  },
+  {
+    "url": "https://2mdn.net/",
+    "domain": "2mdn.net",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 287
+  },
+  {
+    "url": "https://springer.com/",
+    "domain": "springer.com",
+    "priority": 8,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 289
+  },
+  {
+    "url": "https://telegram.me/",
+    "domain": "telegram.me",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 293
+  },
+  {
+    "url": "https://drom.ru/",
+    "domain": "drom.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 294
+  },
+  {
+    "url": "https://crpt.ru/",
+    "domain": "crpt.ru",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 295
+  },
+  {
+    "url": "https://mozilla.com/",
+    "domain": "mozilla.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 296
+  },
+  {
+    "url": "https://mzstatic.com/",
+    "domain": "mzstatic.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 297
+  },
+  {
+    "url": "https://hp.com/",
+    "domain": "hp.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 298
+  },
+  {
+    "url": "https://shiabank.com/",
+    "domain": "shiabank.com",
+    "priority": 8,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 299
+  },
+  {
+    "url": "https://nature.com/",
+    "domain": "nature.com",
+    "priority": 7,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 301
+  },
+  {
+    "url": "https://byteoversea.net/",
+    "domain": "byteoversea.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 302
+  },
+  {
+    "url": "https://salesforce.com/",
+    "domain": "salesforce.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 303
+  },
+  {
+    "url": "https://weibo.com/",
+    "domain": "weibo.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 304
+  },
+  {
+    "url": "https://inmobi.com/",
+    "domain": "inmobi.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 305
+  },
+  {
+    "url": "https://steampowered.com/",
+    "domain": "steampowered.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 306
+  },
+  {
+    "url": "https://statsigapi.net/",
+    "domain": "statsigapi.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 307
+  },
+  {
+    "url": "https://jsdelivr.net/",
+    "domain": "jsdelivr.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 308
+  },
+  {
+    "url": "https://autodesk.com/",
+    "domain": "autodesk.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 311
+  },
+  {
+    "url": "https://alibaba.com/",
+    "domain": "alibaba.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 313
+  },
+  {
+    "url": "https://clarity.ms/",
+    "domain": "clarity.ms",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 314
+  },
+  {
+    "url": "https://weather.com/",
+    "domain": "weather.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 316
+  },
+  {
+    "url": "https://ok.ru/",
+    "domain": "ok.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 317
+  },
+  {
+    "url": "https://debian.org/",
+    "domain": "debian.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 320
+  },
+  {
+    "url": "https://ea.com/",
+    "domain": "ea.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 321
+  },
+  {
+    "url": "https://wiley.com/",
+    "domain": "wiley.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 322
+  },
+  {
+    "url": "https://mtgglobals.com/",
+    "domain": "mtgglobals.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 324
+  },
+  {
+    "url": "https://samsungqbe.com/",
+    "domain": "samsungqbe.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 325
+  },
+  {
+    "url": "https://heytapmobile.com/",
+    "domain": "heytapmobile.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 326
+  },
+  {
+    "url": "https://dell.com/",
+    "domain": "dell.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 327
+  },
+  {
+    "url": "https://shalltry.com/",
+    "domain": "shalltry.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 329
+  },
+  {
+    "url": "https://php.net/",
+    "domain": "php.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 330
+  },
+  {
+    "url": "https://amazon.co.uk/",
+    "domain": "amazon.co.uk",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 333
+  },
+  {
+    "url": "https://myshopify.com/",
+    "domain": "myshopify.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 334
+  },
+  {
+    "url": "https://trueconf.net/",
+    "domain": "trueconf.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 338
+  },
+  {
+    "url": "https://tbcache.com/",
+    "domain": "tbcache.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 340
+  },
+  {
+    "url": "https://prodregistryv2.org/",
+    "domain": "prodregistryv2.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 343
+  },
+  {
+    "url": "https://gnu.org/",
+    "domain": "gnu.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 344
+  },
+  {
+    "url": "https://bilibili.com/",
+    "domain": "bilibili.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 345
+  },
+  {
+    "url": "https://inner-active.mobi/",
+    "domain": "inner-active.mobi",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 349
+  },
+  {
+    "url": "https://naver.com/",
+    "domain": "naver.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 352
+  },
+  {
+    "url": "https://slack.com/",
+    "domain": "slack.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 355
+  },
+  {
+    "url": "https://twc.com/",
+    "domain": "twc.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 359
+  },
+  {
+    "url": "https://allawnos.com/",
+    "domain": "allawnos.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 361
+  },
+  {
+    "url": "https://media.net/",
+    "domain": "media.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 362
+  },
+  {
+    "url": "https://selectel.ru/",
+    "domain": "selectel.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 363
+  },
+  {
+    "url": "https://tradingview.com/",
+    "domain": "tradingview.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 364
+  },
+  {
+    "url": "https://weebly.com/",
+    "domain": "weebly.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 365
+  },
+  {
+    "url": "https://virginm.net/",
+    "domain": "virginm.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 366
+  },
+  {
+    "url": "https://nvidia.com/",
+    "domain": "nvidia.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 370
+  },
+  {
+    "url": "https://live-video.net/",
+    "domain": "live-video.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 371
+  },
+  {
+    "url": "https://issuu.com/",
+    "domain": "issuu.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 372
+  },
+  {
+    "url": "https://wildberries.ru/",
+    "domain": "wildberries.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 374
+  },
+  {
+    "url": "https://zendesk.com/",
+    "domain": "zendesk.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 375
+  },
+  {
+    "url": "https://wsj.com/",
+    "domain": "wsj.com",
+    "priority": 7,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 376
+  },
+  {
+    "url": "https://samsungcloudsolution.com/",
+    "domain": "samsungcloudsolution.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 378
+  },
+  {
+    "url": "https://calendly.com/",
+    "domain": "calendly.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 379
+  },
+  {
+    "url": "https://ip-api.com/",
+    "domain": "ip-api.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 383
+  },
+  {
+    "url": "https://tiktokv.us/",
+    "domain": "tiktokv.us",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 384
+  },
+  {
+    "url": "https://amazon.de/",
+    "domain": "amazon.de",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 390
+  },
+  {
+    "url": "https://paloaltonetworks.com/",
+    "domain": "paloaltonetworks.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 392
+  },
+  {
+    "url": "https://yandex.com/",
+    "domain": "yandex.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 393
+  },
+  {
+    "url": "https://online-metrix.net/",
+    "domain": "online-metrix.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 394
+  },
+  {
+    "url": "https://tp-link.com/",
+    "domain": "tp-link.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 395
+  },
+  {
+    "url": "https://mobile.de/",
+    "domain": "mobile.de",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 398
+  },
+  {
+    "url": "https://dotaplabs.net/",
+    "domain": "dotaplabs.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 399
+  },
+  {
+    "url": "https://shopifysvc.com/",
+    "domain": "shopifysvc.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 400
+  },
+  {
+    "url": "https://bsky.app/",
+    "domain": "bsky.app",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 403
+  },
+  {
+    "url": "https://xcal.tv/",
+    "domain": "xcal.tv",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 406
+  },
+  {
+    "url": "https://vivoglobal.com/",
+    "domain": "vivoglobal.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 407
+  },
+  {
+    "url": "https://onelink.me/",
+    "domain": "onelink.me",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 410
+  },
+  {
+    "url": "https://kwai-pro.com/",
+    "domain": "kwai-pro.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 411
+  },
+  {
+    "url": "https://espn.com/",
+    "domain": "espn.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 412
+  },
+  {
+    "url": "https://aliexpress.com/",
+    "domain": "aliexpress.com",
+    "priority": 7,
+    "category": "commerce",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 413
+  },
+  {
+    "url": "https://mi.com/",
+    "domain": "mi.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 414
+  },
+  {
+    "url": "https://nflxvideo.net/",
+    "domain": "nflxvideo.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 415
+  },
+  {
+    "url": "https://ezvizlife.com/",
+    "domain": "ezvizlife.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 416
+  },
+  {
+    "url": "https://ipify.org/",
+    "domain": "ipify.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 417
+  },
+  {
+    "url": "https://globo.com/",
+    "domain": "globo.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 419
+  },
+  {
+    "url": "https://vkuser.net/",
+    "domain": "vkuser.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 420
+  },
+  {
+    "url": "https://heytapdl.com/",
+    "domain": "heytapdl.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 421
+  },
+  {
+    "url": "https://unsplash.com/",
+    "domain": "unsplash.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 422
+  },
+  {
+    "url": "https://163.com/",
+    "domain": "163.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 423
+  },
+  {
+    "url": "https://brave.com/",
+    "domain": "brave.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 424
+  },
+  {
+    "url": "https://line.me/",
+    "domain": "line.me",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 425
+  },
+  {
+    "url": "https://tiktokv.eu/",
+    "domain": "tiktokv.eu",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 427
+  },
+  {
+    "url": "https://supercell.com/",
+    "domain": "supercell.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 428
+  },
+  {
+    "url": "https://amazonalexa.com/",
+    "domain": "amazonalexa.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 429
+  },
+  {
+    "url": "https://google.cn/",
+    "domain": "google.cn",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 430
+  },
+  {
+    "url": "https://dailymotion.com/",
+    "domain": "dailymotion.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 431
+  },
+  {
+    "url": "https://huawei.com/",
+    "domain": "huawei.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 432
+  },
+  {
+    "url": "https://steamcommunity.com/",
+    "domain": "steamcommunity.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 433
+  },
+  {
+    "url": "https://kaspersky-labs.com/",
+    "domain": "kaspersky-labs.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 435
+  },
+  {
+    "url": "https://temu.com/",
+    "domain": "temu.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 436
+  },
+  {
+    "url": "https://beian.gov.cn/",
+    "domain": "beian.gov.cn",
+    "priority": 7,
+    "category": "public",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 437
+  },
+  {
+    "url": "https://pangle.io/",
+    "domain": "pangle.io",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 438
+  },
+  {
+    "url": "https://claude.ai/",
+    "domain": "claude.ai",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 440
+  },
+  {
+    "url": "https://taobao.com/",
+    "domain": "taobao.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 441
+  },
+  {
+    "url": "https://chinamobile.com/",
+    "domain": "chinamobile.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 442
+  },
+  {
+    "url": "https://intel.com/",
+    "domain": "intel.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 443
+  },
+  {
+    "url": "https://kwaipros.com/",
+    "domain": "kwaipros.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 444
+  },
+  {
+    "url": "https://awsglobalaccelerator.com/",
+    "domain": "awsglobalaccelerator.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 446
+  },
+  {
+    "url": "https://wbx2.com/",
+    "domain": "wbx2.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 447
+  },
+  {
+    "url": "https://netease.com/",
+    "domain": "netease.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 450
+  },
+  {
+    "url": "https://skyhigh.cloud/",
+    "domain": "skyhigh.cloud",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 451
+  },
+  {
+    "url": "https://substack.com/",
+    "domain": "substack.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 452
+  },
+  {
+    "url": "https://ipinfo.io/",
+    "domain": "ipinfo.io",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 453
+  },
+  {
+    "url": "https://go.com/",
+    "domain": "go.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 455
+  },
+  {
+    "url": "https://businessinsider.com/",
+    "domain": "businessinsider.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 457
+  },
+  {
+    "url": "https://sina.com.cn/",
+    "domain": "sina.com.cn",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 458
+  },
+  {
+    "url": "https://yahoo.co.jp/",
+    "domain": "yahoo.co.jp",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 459
+  },
+  {
+    "url": "https://wp.com/",
+    "domain": "wp.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 460
+  },
+  {
+    "url": "https://adobe.net/",
+    "domain": "adobe.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 461
+  },
+  {
+    "url": "https://aol.com/",
+    "domain": "aol.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 462
+  },
+  {
+    "url": "https://byteglb.com/",
+    "domain": "byteglb.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 463
+  },
+  {
+    "url": "https://pixabay.com/",
+    "domain": "pixabay.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 465
+  },
+  {
+    "url": "https://timeweb.ru/",
+    "domain": "timeweb.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 466
+  },
+  {
+    "url": "https://tencent-cloud.net/",
+    "domain": "tencent-cloud.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 468
+  },
+  {
+    "url": "https://speedtest.net/",
+    "domain": "speedtest.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 470
+  },
+  {
+    "url": "https://avsxappcaptiveportal.com/",
+    "domain": "avsxappcaptiveportal.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 471
+  },
+  {
+    "url": "https://g.page/",
+    "domain": "g.page",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 472
+  },
+  {
+    "url": "https://eye4.cn/",
+    "domain": "eye4.cn",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 473
+  },
+  {
+    "url": "https://gamepass.com/",
+    "domain": "gamepass.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 475
+  },
+  {
+    "url": "https://mikrotik.com/",
+    "domain": "mikrotik.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 476
+  },
+  {
+    "url": "https://sohu.com/",
+    "domain": "sohu.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 478
+  },
+  {
+    "url": "https://duolingo.com/",
+    "domain": "duolingo.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 479
+  },
+  {
+    "url": "https://firetvcaptiveportal.com/",
+    "domain": "firetvcaptiveportal.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 482
+  },
+  {
+    "url": "https://cnbc.com/",
+    "domain": "cnbc.com",
+    "priority": 7,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 485
+  },
+  {
+    "url": "https://kwai.net/",
+    "domain": "kwai.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 486
+  },
+  {
+    "url": "https://statista.com/",
+    "domain": "statista.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 487
+  },
+  {
+    "url": "https://list-manage.com/",
+    "domain": "list-manage.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 488
+  },
+  {
+    "url": "https://addtoany.com/",
+    "domain": "addtoany.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 489
+  },
+  {
+    "url": "https://adriver.ru/",
+    "domain": "adriver.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 490
+  },
+  {
+    "url": "https://ietf.org/",
+    "domain": "ietf.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 491
+  },
+  {
+    "url": "https://libp2p.direct/",
+    "domain": "libp2p.direct",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 492
+  },
+  {
+    "url": "https://sc-gw.com/",
+    "domain": "sc-gw.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 493
+  },
+  {
+    "url": "https://nease.net/",
+    "domain": "nease.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 494
+  },
+  {
+    "url": "https://amazon.co.jp/",
+    "domain": "amazon.co.jp",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 496
+  },
+  {
+    "url": "https://okta.com/",
+    "domain": "okta.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 497
+  },
+  {
+    "url": "https://atlassian.net/",
+    "domain": "atlassian.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 498
+  },
+  {
+    "url": "https://scribd.com/",
+    "domain": "scribd.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 499
+  },
+  {
+    "url": "https://mynetname.net/",
+    "domain": "mynetname.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 500
+  },
+  {
+    "url": "https://mcafee.com/",
+    "domain": "mcafee.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 501
+  },
+  {
+    "url": "https://markmonitor.com/",
+    "domain": "markmonitor.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 503
+  },
+  {
+    "url": "https://ivi.ru/",
+    "domain": "ivi.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 504
+  },
+  {
+    "url": "https://dynatrace.com/",
+    "domain": "dynatrace.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 505
+  },
+  {
+    "url": "https://mediatek.com/",
+    "domain": "mediatek.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 507
+  },
+  {
+    "url": "https://shein.com/",
+    "domain": "shein.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 509
+  },
+  {
+    "url": "https://duckduckgo.com/",
+    "domain": "duckduckgo.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 510
+  },
+  {
+    "url": "https://eventbrite.com/",
+    "domain": "eventbrite.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 511
+  },
+  {
+    "url": "https://ampproject.org/",
+    "domain": "ampproject.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 513
+  },
+  {
+    "url": "https://behance.net/",
+    "domain": "behance.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 515
+  },
+  {
+    "url": "https://mysql.com/",
+    "domain": "mysql.com",
+    "priority": 7,
+    "category": "technology",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 516
+  },
+  {
+    "url": "https://foxnews.com/",
+    "domain": "foxnews.com",
+    "priority": 7,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 517
+  },
+  {
+    "url": "https://google.de/",
+    "domain": "google.de",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 518
+  },
+  {
+    "url": "https://indiatimes.com/",
+    "domain": "indiatimes.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 520
+  },
+  {
+    "url": "https://amzn.to/",
+    "domain": "amzn.to",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 521
+  },
+  {
+    "url": "https://gosuslugi.ru/",
+    "domain": "gosuslugi.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 522
+  },
+  {
+    "url": "https://exp-tas.com/",
+    "domain": "exp-tas.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 523
+  },
+  {
+    "url": "https://ngenix.net/",
+    "domain": "ngenix.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 524
+  },
+  {
+    "url": "https://discord.media/",
+    "domain": "discord.media",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 526
+  },
+  {
+    "url": "https://trendmicro.com/",
+    "domain": "trendmicro.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 530
+  },
+  {
+    "url": "https://slideshare.net/",
+    "domain": "slideshare.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 533
+  },
+  {
+    "url": "https://fandom.com/",
+    "domain": "fandom.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 534
+  },
+  {
+    "url": "https://adobedtm.com/",
+    "domain": "adobedtm.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 536
+  },
+  {
+    "url": "https://netflix.net/",
+    "domain": "netflix.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 539
+  },
+  {
+    "url": "https://visualstudio.com/",
+    "domain": "visualstudio.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 541
+  },
+  {
+    "url": "https://on.aws/",
+    "domain": "on.aws",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 542
+  },
+  {
+    "url": "https://amazon.co.za/",
+    "domain": "amazon.co.za",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 543
+  },
+  {
+    "url": "https://firefox.com/",
+    "domain": "firefox.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 544
+  },
+  {
+    "url": "https://squarespace.com/",
+    "domain": "squarespace.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 546
+  },
+  {
+    "url": "https://google.com.hk/",
+    "domain": "google.com.hk",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 547
+  },
+  {
+    "url": "https://oup.com/",
+    "domain": "oup.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 549
+  },
+  {
+    "url": "https://jquery.com/",
+    "domain": "jquery.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 552
+  },
+  {
+    "url": "https://adobedc.net/",
+    "domain": "adobedc.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 553
+  },
+  {
+    "url": "https://wired.com/",
+    "domain": "wired.com",
+    "priority": 7,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 554
+  },
+  {
+    "url": "https://blogger.com/",
+    "domain": "blogger.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 555
+  },
+  {
+    "url": "https://palmplaystore.com/",
+    "domain": "palmplaystore.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 557
+  },
+  {
+    "url": "https://vidaahub.com/",
+    "domain": "vidaahub.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 558
+  },
+  {
+    "url": "https://tandfonline.com/",
+    "domain": "tandfonline.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 560
+  },
+  {
+    "url": "https://live.net/",
+    "domain": "live.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 561
+  },
+  {
+    "url": "https://uol.com.br/",
+    "domain": "uol.com.br",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 565
+  },
+  {
+    "url": "https://grammarly.com/",
+    "domain": "grammarly.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 566
+  },
+  {
+    "url": "https://svc.ms/",
+    "domain": "svc.ms",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 567
+  },
+  {
+    "url": "https://time.com/",
+    "domain": "time.com",
+    "priority": 7,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 569
+  },
+  {
+    "url": "https://sberbank.ru/",
+    "domain": "sberbank.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 570
+  },
+  {
+    "url": "https://shop.app/",
+    "domain": "shop.app",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 571
+  },
+  {
+    "url": "https://nstld.com/",
+    "domain": "nstld.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 575
+  },
+  {
+    "url": "https://rakuten.co.jp/",
+    "domain": "rakuten.co.jp",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 577
+  },
+  {
+    "url": "https://supertms.com/",
+    "domain": "supertms.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 579
+  },
+  {
+    "url": "https://usatoday.com/",
+    "domain": "usatoday.com",
+    "priority": 7,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 580
+  },
+  {
+    "url": "https://aboutads.info/",
+    "domain": "aboutads.info",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 581
+  },
+  {
+    "url": "https://teamviewer.com/",
+    "domain": "teamviewer.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 583
+  },
+  {
+    "url": "https://e2ro.com/",
+    "domain": "e2ro.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 584
+  },
+  {
+    "url": "https://pushy.io/",
+    "domain": "pushy.io",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 586
+  },
+  {
+    "url": "https://bitrix24.ru/",
+    "domain": "bitrix24.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 588
+  },
+  {
+    "url": "https://patreon.com/",
+    "domain": "patreon.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 589
+  },
+  {
+    "url": "https://my.com/",
+    "domain": "my.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 591
+  },
+  {
+    "url": "https://easebar.com/",
+    "domain": "easebar.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 592
+  },
+  {
+    "url": "https://digitalocean.com/",
+    "domain": "digitalocean.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 593
+  },
+  {
+    "url": "https://klaviyo.com/",
+    "domain": "klaviyo.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 596
+  },
+  {
+    "url": "https://hotjar.com/",
+    "domain": "hotjar.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 598
+  },
+  {
+    "url": "https://ca.gov/",
+    "domain": "ca.gov",
+    "priority": 7,
+    "category": "public",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 599
+  },
+  {
+    "url": "https://imgsmail.ru/",
+    "domain": "imgsmail.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 600
+  },
+  {
+    "url": "https://free.fr/",
+    "domain": "free.fr",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 602
+  },
+  {
+    "url": "https://ieee.org/",
+    "domain": "ieee.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 605
+  },
+  {
+    "url": "https://xiaomi.net/",
+    "domain": "xiaomi.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 606
+  },
+  {
+    "url": "https://avito.ru/",
+    "domain": "avito.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 608
+  },
+  {
+    "url": "https://playstation.com/",
+    "domain": "playstation.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 610
+  },
+  {
+    "url": "https://force.com/",
+    "domain": "force.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 611
+  },
+  {
+    "url": "https://telegraph.co.uk/",
+    "domain": "telegraph.co.uk",
+    "priority": 7,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 612
+  },
+  {
+    "url": "https://samsungapps.com/",
+    "domain": "samsungapps.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 613
+  },
+  {
+    "url": "https://mdpi.com/",
+    "domain": "mdpi.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 614
+  },
+  {
+    "url": "https://anthropic.com/",
+    "domain": "anthropic.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 616
+  },
+  {
+    "url": "https://xboxlive.com/",
+    "domain": "xboxlive.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 619
+  },
+  {
+    "url": "https://threads.com/",
+    "domain": "threads.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 620
+  },
+  {
+    "url": "https://2gis.com/",
+    "domain": "2gis.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 621
+  },
+  {
+    "url": "https://amazon.fr/",
+    "domain": "amazon.fr",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 622
+  },
+  {
+    "url": "https://nintendo.com/",
+    "domain": "nintendo.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 623
+  },
+  {
+    "url": "https://atlassian.com/",
+    "domain": "atlassian.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 624
+  },
+  {
+    "url": "https://wix.com/",
+    "domain": "wix.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 626
+  },
+  {
+    "url": "https://accuweather.com/",
+    "domain": "accuweather.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 627
+  },
+  {
+    "url": "https://sharethrough.com/",
+    "domain": "sharethrough.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 629
+  },
+  {
+    "url": "https://featureassets.org/",
+    "domain": "featureassets.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 630
+  },
+  {
+    "url": "https://mega.co.nz/",
+    "domain": "mega.co.nz",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 631
+  },
+  {
+    "url": "https://unesco.org/",
+    "domain": "unesco.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 632
+  },
+  {
+    "url": "https://doctolib.fr/",
+    "domain": "doctolib.fr",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 633
+  },
+  {
+    "url": "https://ikea.com/",
+    "domain": "ikea.com",
+    "priority": 7,
+    "category": "commerce",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 634
+  },
+  {
+    "url": "https://openstreetmap.org/",
+    "domain": "openstreetmap.org",
+    "priority": 7,
+    "category": "open-knowledge",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 636
+  },
+  {
+    "url": "https://branch.io/",
+    "domain": "branch.io",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 637
+  },
+  {
+    "url": "https://withgoogle.com/",
+    "domain": "withgoogle.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 638
+  },
+  {
+    "url": "https://jotform.com/",
+    "domain": "jotform.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 639
+  },
+  {
+    "url": "https://msidentity.com/",
+    "domain": "msidentity.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 640
+  },
+  {
+    "url": "https://nike.com/",
+    "domain": "nike.com",
+    "priority": 7,
+    "category": "commerce",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 641
+  },
+  {
+    "url": "https://amazon.ca/",
+    "domain": "amazon.ca",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 645
+  },
+  {
+    "url": "https://shopee.com.br/",
+    "domain": "shopee.com.br",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 648
+  },
+  {
+    "url": "https://sagepub.com/",
+    "domain": "sagepub.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 649
+  },
+  {
+    "url": "https://mhverifier.ru/",
+    "domain": "mhverifier.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 650
+  },
+  {
+    "url": "https://ups.com/",
+    "domain": "ups.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 651
+  },
+  {
+    "url": "https://allegro.pl/",
+    "domain": "allegro.pl",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 652
+  },
+  {
+    "url": "https://techcrunch.com/",
+    "domain": "techcrunch.com",
+    "priority": 7,
+    "category": "news",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 654
+  },
+  {
+    "url": "https://uk.com/",
+    "domain": "uk.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 657
+  },
+  {
+    "url": "https://h264.io/",
+    "domain": "h264.io",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 658
+  },
+  {
+    "url": "https://bitdefender.net/",
+    "domain": "bitdefender.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 659
+  },
+  {
+    "url": "https://yelp.com/",
+    "domain": "yelp.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 660
+  },
+  {
+    "url": "https://intercom.io/",
+    "domain": "intercom.io",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 662
+  },
+  {
+    "url": "https://vedsalb.com/",
+    "domain": "vedsalb.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 665
+  },
+  {
+    "url": "https://service.gov.uk/",
+    "domain": "service.gov.uk",
+    "priority": 7,
+    "category": "public",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 667
+  },
+  {
+    "url": "https://surveymonkey.com/",
+    "domain": "surveymonkey.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 668
+  },
+  {
+    "url": "https://ovh.net/",
+    "domain": "ovh.net",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 669
+  },
+  {
+    "url": "https://elpais.com/",
+    "domain": "elpais.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 671
+  },
+  {
+    "url": "https://telephony.goog/",
+    "domain": "telephony.goog",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 672
+  },
+  {
+    "url": "https://primevideo.com/",
+    "domain": "primevideo.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 673
+  },
+  {
+    "url": "https://cmediahub.ru/",
+    "domain": "cmediahub.ru",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 675
+  },
+  {
+    "url": "https://anydesk.com/",
+    "domain": "anydesk.com",
+    "priority": 7,
+    "category": "ranked-web",
+    "max_depth": 2,
+    "source": "tranco:GQNVK",
+    "source_rank": 676
+  }
+]

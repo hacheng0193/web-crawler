@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 from unittest.mock import patch
 
-from crawler import Crawler, LinkParser, load_seeds, normalize_url
+from crawler import Crawler, HostAwareFrontier, LinkParser, load_seeds, normalize_url
 
 
 class CrawlerTests(unittest.TestCase):
@@ -28,9 +28,40 @@ class CrawlerTests(unittest.TestCase):
         self.assertEqual(parser.title, "Hello world")
         self.assertEqual(parser.links, ["/a", "x"])
 
+    def test_frontier_round_robins_hosts_while_preserving_host_priority(self):
+        frontier = HostAwareFrontier()
+        urls = [
+            "https://a.example/1",
+            "https://a.example/2",
+            "https://b.example/1",
+            "https://b.example/2",
+            "https://c.example/1",
+            "https://c.example/2",
+        ]
+        for order, url in enumerate(urls):
+            frontier.put((-10, order, url, 1, "https://parent.example/"))
+
+        selected = [frontier.get(timeout=0)[2].split("/")[2] for _ in range(6)]
+        self.assertEqual(selected, ["a.example", "b.example", "c.example", "a.example", "b.example", "c.example"])
+
     def test_seed_file_is_valid_json(self):
         with (Path(__file__).parents[1] / "seed_urls.json").open(encoding="utf-8") as handle:
             self.assertIsInstance(json.load(handle), list)
+
+    def test_generated_seed_sets_are_nested_and_exact_size(self):
+        root = Path(__file__).parents[1]
+        sets = []
+        for size in (300, 500, 1000):
+            with (root / f"seed_urls_{size}.json").open(encoding="utf-8") as handle:
+                seeds = json.load(handle)
+            self.assertEqual(len(load_seeds(root / f"seed_urls_{size}.json")), size)
+            self.assertEqual(len(seeds), size)
+            self.assertEqual(len({seed["url"] for seed in seeds}), size)
+            self.assertTrue(all(seed["url"] for seed in seeds))
+            sets.append(seeds)
+
+        self.assertEqual([seed["url"] for seed in sets[0]], [seed["url"] for seed in sets[1][:300]])
+        self.assertEqual([seed["url"] for seed in sets[1]], [seed["url"] for seed in sets[2][:500]])
 
     def test_discovered_and_crawled_are_persisted_separately(self):
         seeds = [{"url": "https://example.com/", "priority": 10}]

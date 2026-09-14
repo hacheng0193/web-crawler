@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-15",
+  "source": "Tranco Top-2000 snapshot",
+  "source_list_id": "GQNVK",
+  "source_url": "https://tranco-list.eu/",
+  "base_seed_file": "seed_urls.json",
+  "output_files": {
+    "300": "seed_urls_300.json",
+    "500": "seed_urls_500.json",
+    "1000": "seed_urls_1000.json"
+  },
+  "nested": true,
+  "filter_policy": [
+    "deduplicate against the existing 100 seed URLs",
+    "remove obvious advertising and tracking domains",
+    "remove obvious CDN, DNS, hosting, redirect, and telemetry infrastructure",
+    "remove adult and gambling domains",
+    "retain rank order for the remaining Tranco candidates"
+  ],
+  "note": "This is a reproducible candidate seed pool, not a live HTTP validation report."
+}

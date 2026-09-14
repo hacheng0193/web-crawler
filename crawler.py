@@ -4,12 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import heapq
 import json
 import logging
 import queue
 import re
 import threading
 import time
+from collections import deque
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -116,6 +118,65 @@ class JsonlWriter:
             self.handle.close()
 
 
+class HostAwareFrontier:
+    """Priority queues per host with round-robin host scheduling.
+
+    URLs keep their priority inside each host queue, while the outer scheduler
+    gives each active host one URL per turn. This prevents a burst of sibling
+    links from monopolizing workers just because they share a parent page.
+    """
+
+    def __init__(self) -> None:
+        self._queues: dict[str, list[tuple[int, int, str, int, str | None]]] = {}
+        self._host_order: deque[str] = deque()
+        self._active_hosts: set[str] = set()
+        self._condition = threading.Condition()
+        self._size = 0
+
+    def put(self, item: tuple[int, int, str, int, str | None]) -> None:
+        _priority, _order, url, _depth, _parent_url = item
+        host = urlsplit(url).netloc
+        with self._condition:
+            host_queue = self._queues.setdefault(host, [])
+            heapq.heappush(host_queue, item)
+            if host not in self._active_hosts:
+                self._host_order.append(host)
+                self._active_hosts.add(host)
+            self._size += 1
+            self._condition.notify()
+
+    def get(self, timeout: float | None = None) -> tuple[int, int, str, int, str | None]:
+        deadline = None if timeout is None else time.monotonic() + timeout
+        with self._condition:
+            while not self._host_order:
+                if timeout is None:
+                    self._condition.wait()
+                else:
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+                        raise queue.Empty
+                    self._condition.wait(remaining)
+
+            host = self._host_order.popleft()
+            self._active_hosts.remove(host)
+            item = heapq.heappop(self._queues[host])
+            self._size -= 1
+            if self._queues[host]:
+                self._host_order.append(host)
+                self._active_hosts.add(host)
+            else:
+                del self._queues[host]
+            return item
+
+    def task_done(self) -> None:
+        # Kept for the queue-like interface used by the worker loop.
+        return
+
+    def qsize(self) -> int:
+        with self._condition:
+            return self._size
+
+
 class Crawler:
     def __init__(self, seeds: list[dict[str, Any]], output_dir: Path, runtime_seconds: int = 600, max_pages: int = 2000, workers: int = 8, per_host_delay: float = 1.0, timeout: float = 12.0, max_depth: int = 2, live_output: bool = True) -> None:
         self.output_dir = output_dir
@@ -127,7 +188,7 @@ class Crawler:
         self.timeout = timeout
         self.max_depth = max(0, max_depth)
         self.live_output = live_output
-        self.frontier: queue.PriorityQueue[tuple[int, int, str, int, str | None]] = queue.PriorityQueue()
+        self.frontier = HostAwareFrontier()
         # `discovered` is the pending discovered set. Completed URLs are moved
         # into `crawled`; `all_discovered` keeps deduplication and the metric
         # count independent from the pending set.
@@ -376,8 +437,8 @@ def load_seeds(path: Path) -> list[dict[str, Any]]:
         seeds = json.load(handle)
     if not isinstance(seeds, list):
         raise ValueError("seed file must contain a JSON array")
-    if len(seeds) != 100:
-        raise ValueError(f"expected exactly 100 seeds, got {len(seeds)}")
+    if not seeds:
+        raise ValueError("seed file must contain at least one seed")
     return seeds
 
 
@@ -385,7 +446,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run the 100-seed search crawler MVP.")
     parser.add_argument("--seed-file", type=Path, default=Path(__file__).with_name("seed_urls.json"))
     parser.add_argument("--output-dir", type=Path, default=Path(f"output-{int(time.time())}"))
-    parser.add_argument("--runtime-seconds", type=int, default=600, help="hard runtime cap; default: 300 (5 minutes)")
+    parser.add_argument("--runtime-seconds", type=int, default=600, help="hard runtime cap; default: 600 (10 minutes)")
     parser.add_argument("--max-pages", type=int, default=10000)
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--per-host-delay", type=float, default=5.0)

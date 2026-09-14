@@ -1,6 +1,6 @@
 # Search crawler MVP
 
-這是一個零外部依賴的 search-engine crawler MVP：使用 100 個 curated seed URL，預設最多執行 600 秒（10 分鐘），遵守 robots.txt，對同一 host 保持請求間隔，並將 discovered 與 crawled 分開保存。
+這是一個零外部依賴的 search-engine crawler MVP：使用 100 個 curated seed URL，預設最多執行 600 秒（10 分鐘），遵守 robots.txt，對同一 host 保持請求間隔，並將 discovered 與 crawled 分開保存。Frontier 使用 per-host priority queue 加 round-robin host scheduler，避免同一個 parent 發現的大量 sibling URL 連續佔滿 worker。
 
 ## 執行
 
@@ -21,15 +21,36 @@ python3 crawler.py
 - `100` 個 seed，來源是 `seed_urls.json`
 - runtime hard cap：`600` 秒
 - `8` 個 worker
-- 同一 host 請求間隔：`1` 秒
+- 同一 host 請求間隔：`5` 秒
 - 每頁 HTTP timeout：`12` 秒
-- 最多記錄 `2000` 頁
+- 最多記錄 `10000` 頁
+- 最大 crawl depth：`3`
 
 第一次快速驗證可把 runtime 改短：
 
 ```bash
 python3 crawler.py --runtime-seconds 30 --max-pages 100 --output-dir output-smoke
 ```
+
+## Seed set
+
+除了預設的 100 seeds，已生成三組 nested seed set：
+
+- `seed_urls_300.json`
+- `seed_urls_500.json`
+- `seed_urls_1000.json`
+
+使用方式，例如 500 seeds 跑 48 小時：
+
+```bash
+python3 crawler.py \
+  --seed-file seed_urls_500.json \
+  --runtime-seconds 172800 \
+  --max-pages 500000 \
+  --output-dir output-500-48h
+```
+
+三組都保留原本 100 筆 curated seeds，後續網域依 Tranco snapshot `GQNVK` 的排名追加，並排除明顯的廣告、追蹤、CDN/DNS infrastructure、成人與 gambling 網域。詳細來源記錄在 `seed_generation_metadata.json`；這些清單是候選 seed pool，仍應透過實際 crawler 統計 HTTP success、robots blocked 與 content quality。
 
 輸出：
 

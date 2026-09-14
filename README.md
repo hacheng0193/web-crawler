@@ -34,7 +34,7 @@ python3 crawler.py --runtime-seconds 30 --max-pages 100 --output-dir output-smok
 輸出：
 
 - `output/discovered.jsonl`：每發現一個新 URL 就立即 append 一行；可用行數計算 total discovered URLs
-- `output/crawled.jsonl`：每次 fetch 完成就立即 append 一行，包含 `success`、status、title、depth、parent URL、發現連結數與錯誤
+- `output/crawled.jsonl`：每次 fetch 完成就立即 append 一行，包含 `request_started_at`（真正發出 HTML request 前的時間）、`fetched_at`、`success`、status、title、depth、parent URL、發現連結數與錯誤
 - `output/discovered_pending.json`：執行結束時仍待處理的 discovered dict；已完成 fetch 的 URL 會從這個 pending dict 移除
 - `output/crawl_summary.json`：本次執行摘要，直接包含 `total_discovered` 與 `successful_crawled`
 

@@ -6,3 +6,5 @@ output-*/
 .venv/
 venv/
 *.egg-info/
+metrics/
+tests/

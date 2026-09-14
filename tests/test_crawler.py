@@ -1,6 +1,7 @@
 import json
 import tempfile
 import unittest
+from datetime import datetime
 from pathlib import Path
 from unittest.mock import patch
 
@@ -59,6 +60,10 @@ class CrawlerTests(unittest.TestCase):
             self.assertEqual(len(discovered_lines), 2)
             self.assertEqual(len(crawled_lines), 1)
             self.assertEqual(list(pending), ["https://example.com/next"])
+            crawled_record = json.loads(crawled_lines[0])
+            request_started_at = datetime.fromisoformat(crawled_record["request_started_at"])
+            fetched_at = datetime.fromisoformat(crawled_record["fetched_at"])
+            self.assertLessEqual(request_started_at, fetched_at)
 
 
 if __name__ == "__main__":

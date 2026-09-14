@@ -91,6 +91,7 @@ class CrawlResult:
     depth: int
     parent_url: str | None
     links_found: int
+    request_started_at: str | None
     fetched_at: str
     elapsed_ms: int
     success: bool = False
@@ -264,10 +265,11 @@ class Crawler:
                         continue
                     self.claimed_pages += 1
                 if not self._allowed_by_robots(url):
-                    self._record(url, None, "", "", depth, parent_url, 0, started, "blocked by robots.txt")
+                    self._record(url, None, "", "", depth, parent_url, 0, started, "blocked by robots.txt", None)
                     continue
                 host = urlsplit(url).netloc
                 self._wait_for_host(host)
+                request_started_at = datetime.now(timezone.utc).isoformat()
                 status, content_type, body, error = self._fetch(url)
                 parser = LinkParser()
                 if body:
@@ -277,11 +279,11 @@ class Crawler:
                             child = normalize_url(link, url)
                             if child:
                                 self.schedule(child, max(1, 10 - depth), depth + 1, url)
-                self._record(url, status, parser.title, content_type, depth, parent_url, len(parser.links), started, error)
+                self._record(url, status, parser.title, content_type, depth, parent_url, len(parser.links), started, error, request_started_at)
             finally:
                 self.frontier.task_done()
 
-    def _record(self, url: str, status: int | None, title: str, content_type: str, depth: int, parent_url: str | None, links_found: int, started: float, error: str | None = None) -> None:
+    def _record(self, url: str, status: int | None, title: str, content_type: str, depth: int, parent_url: str | None, links_found: int, started: float, error: str | None = None, request_started_at: str | None = None) -> None:
         success = error is None and status is not None and 200 <= status < 400
         result = CrawlResult(
             url=url,
@@ -291,6 +293,7 @@ class Crawler:
             depth=depth,
             parent_url=parent_url,
             links_found=links_found,
+            request_started_at=request_started_at,
             fetched_at=datetime.now(timezone.utc).isoformat(),
             elapsed_ms=int((time.monotonic() - started) * 1000),
             success=success,
@@ -323,7 +326,7 @@ class Crawler:
             if time.monotonic() >= self.deadline:
                 self.stop_event.set()
                 break
-            time.sleep(5)
+            time.sleep(0.5)
         self.stop_event.set()
         for thread in threads:
             thread.join(timeout=self.timeout + 1)
@@ -382,7 +385,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run the 100-seed search crawler MVP.")
     parser.add_argument("--seed-file", type=Path, default=Path(__file__).with_name("seed_urls.json"))
     parser.add_argument("--output-dir", type=Path, default=Path(f"output-{int(time.time())}"))
-    parser.add_argument("--runtime-seconds", type=int, default=300, help="hard runtime cap; default: 300 (5 minutes)")
+    parser.add_argument("--runtime-seconds", type=int, default=600, help="hard runtime cap; default: 300 (5 minutes)")
     parser.add_argument("--max-pages", type=int, default=10000)
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--per-host-delay", type=float, default=5.0)

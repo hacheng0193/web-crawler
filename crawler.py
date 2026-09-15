@@ -19,7 +19,7 @@ from http import HTTPStatus
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import parse_qsl, urlencode, urldefrag, urljoin, urlsplit, urlunsplit
+from urllib.parse import parse_qsl, quote, urlencode, urldefrag, urljoin, urlsplit, urlunsplit
 from urllib.request import Request, build_opener
 from urllib.robotparser import RobotFileParser
 
@@ -40,6 +40,11 @@ def normalize_url(raw_url: str, base_url: str | None = None) -> str | None:
     if not host:
         return None
     try:
+        # HTTP Host headers use ASCII; IDN host names need their punycode form.
+        host = host.encode("idna").decode("ascii")
+    except UnicodeError:
+        return None
+    try:
         port = parts.port
     except ValueError:
         return None
@@ -48,7 +53,9 @@ def normalize_url(raw_url: str, base_url: str | None = None) -> str | None:
         return None
     if port and not ((scheme == "http" and port == 80) or (scheme == "https" and port == 443)):
         netloc = f"{host}:{port}"
-    path = parts.path or "/"
+    # urllib.request eventually encodes the request target as ASCII. Encode
+    # Unicode paths here so links such as /中文頁面 do not kill a worker thread.
+    path = quote(parts.path or "/", safe="/%:@-._~!$&'()*+,;=")
     if path != "/":
         path = re.sub(r"/{2,}", "/", path)
         path = path.rstrip("/") or "/"
@@ -116,6 +123,32 @@ class JsonlWriter:
     def close(self) -> None:
         with self.lock:
             self.handle.close()
+
+
+class JsonArrayWriter:
+    """Thread-safe writer that keeps a valid JSON array on disk after each write."""
+
+    def __init__(self, path: Path) -> None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        self.path = path
+        self.lock = threading.Lock()
+        self.records: list[dict[str, Any]] = []
+        self._flush()
+
+    def write(self, record: dict[str, Any]) -> None:
+        with self.lock:
+            self.records.append(record)
+            self._flush()
+
+    def _flush(self) -> None:
+        temporary_path = self.path.with_name(f".{self.path.name}.tmp")
+        with temporary_path.open("w", encoding="utf-8") as handle:
+            json.dump(self.records, handle, ensure_ascii=False, indent=2)
+            handle.write("\n")
+        temporary_path.replace(self.path)
+
+    def close(self) -> None:
+        return
 
 
 class HostAwareFrontier:
@@ -213,6 +246,7 @@ class Crawler:
         self.claimed_pages = 0
         self.discovered_writer = JsonlWriter(self.output_dir / "discovered.jsonl")
         self.crawled_writer = JsonlWriter(self.output_dir / "crawled.jsonl")
+        self.error_writer = JsonArrayWriter(self.output_dir / "error.json")
         for seed in seeds:
             url = normalize_url(str(seed.get("url", "")))
             if url:
@@ -275,7 +309,7 @@ class Crawler:
                 parser.parse([])
                 return parser
             self.logger.debug("robots unavailable for %s: %s", origin, exc)
-        except (OSError, URLError, TimeoutError) as exc:
+        except (OSError, URLError, TimeoutError, UnicodeError) as exc:
             self.logger.debug("robots unavailable for %s: %s", origin, exc)
         # A transient/unreachable robots endpoint should not make the entire seed unusable.
         return None
@@ -301,7 +335,7 @@ class Crawler:
                 return status, content_type, body, None
         except HTTPError as exc:
             return exc.code, "", "", str(exc)
-        except (OSError, URLError, TimeoutError) as exc:
+        except (OSError, URLError, TimeoutError, UnicodeError) as exc:
             return None, "", "", str(exc)
 
     def _worker(self) -> None:
@@ -316,6 +350,7 @@ class Crawler:
                 # The coordinator stops them at the runtime cap or page cap.
                 continue
             started = time.monotonic()
+            recorded = False
             try:
                 with self.result_lock:
                     if self.claimed_pages >= self.max_pages:
@@ -327,6 +362,7 @@ class Crawler:
                     self.claimed_pages += 1
                 if not self._allowed_by_robots(url):
                     self._record(url, None, "", "", depth, parent_url, 0, started, "blocked by robots.txt", None)
+                    recorded = True
                     continue
                 host = urlsplit(url).netloc
                 self._wait_for_host(host)
@@ -341,6 +377,12 @@ class Crawler:
                             if child:
                                 self.schedule(child, max(1, 10 - depth), depth + 1, url)
                 self._record(url, status, parser.title, content_type, depth, parent_url, len(parser.links), started, error, request_started_at)
+                recorded = True
+            except Exception as exc:
+                error = f"{type(exc).__name__}: {exc}"
+                self.logger.exception("worker failed while processing %s", url)
+                if not recorded:
+                    self._record(url, None, "", "", depth, parent_url, 0, started, error, None)
             finally:
                 self.frontier.task_done()
 
@@ -373,6 +415,18 @@ class Crawler:
         # Persist every completed fetch immediately so a process interruption
         # does not discard the metric data already collected.
         self.crawled_writer.write(result_record)
+        if error:
+            self.error_writer.write(
+                {
+                    "url": url,
+                    "status": status,
+                    "depth": depth,
+                    "parent_url": parent_url,
+                    "error": error,
+                    "request_started_at": request_started_at,
+                    "occurred_at": result_record["fetched_at"],
+                }
+            )
         status_text = str(status) if status is not None else "ERR"
         suffix = f" error={error}" if error else ""
         self._emit(f"[FETCHED {result_number}/{self.max_pages}] status={status_text} depth={depth} {url}{suffix}")
@@ -420,6 +474,7 @@ class Crawler:
         finally:
             self.discovered_writer.close()
             self.crawled_writer.close()
+            self.error_writer.close()
         return summary
 
     def _write_outputs(self, summary: dict[str, Any]) -> None:

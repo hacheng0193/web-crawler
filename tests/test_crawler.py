@@ -22,6 +22,12 @@ class CrawlerTests(unittest.TestCase):
         self.assertIsNone(normalize_url("mailto:test@example.com"))
         self.assertIsNone(normalize_url("https://user:pass@example.com/"))
 
+    def test_normalize_url_percent_encodes_unicode_path(self):
+        self.assertEqual(
+            normalize_url("https://example.com/中文頁面/hello world"),
+            "https://example.com/%E4%B8%AD%E6%96%87%E9%A0%81%E9%9D%A2/hello%20world",
+        )
+
     def test_parser_extracts_title_and_links(self):
         parser = LinkParser()
         parser.feed("<title>  Hello <b>world</b> </title><a href='/a'>A</a><a href='x'>X</a>")
@@ -95,6 +101,41 @@ class CrawlerTests(unittest.TestCase):
             request_started_at = datetime.fromisoformat(crawled_record["request_started_at"])
             fetched_at = datetime.fromisoformat(crawled_record["fetched_at"])
             self.assertLessEqual(request_started_at, fetched_at)
+
+    def test_worker_records_unexpected_errors_without_stopping(self):
+        seeds = [
+            {"url": "https://example.com/中文頁面", "priority": 10},
+            {"url": "https://example.org/ok", "priority": 10},
+        ]
+
+        def fetch(url):
+            if "example.com" in url:
+                raise UnicodeEncodeError("ascii", url, 1, 2, "non-ASCII request target")
+            return 200, "text/html", "<title>OK</title>", None
+
+        with tempfile.TemporaryDirectory() as directory:
+            with patch.object(Crawler, "_allowed_by_robots", return_value=True), patch.object(
+                Crawler, "_fetch", side_effect=fetch
+            ):
+                summary = Crawler(
+                    seeds,
+                    Path(directory),
+                    runtime_seconds=2,
+                    max_pages=2,
+                    workers=1,
+                    per_host_delay=0,
+                    timeout=1,
+                    max_depth=0,
+                    live_output=False,
+                ).run()
+
+            errors = json.loads((Path(directory) / "error.json").read_text(encoding="utf-8"))
+            self.assertEqual(summary["crawled_attempts"], 2)
+            self.assertEqual(summary["successful_crawled"], 1)
+            self.assertEqual(summary["failed_crawled"], 1)
+            self.assertEqual(len(errors), 1)
+            self.assertEqual(errors[0]["url"], "https://example.com/%E4%B8%AD%E6%96%87%E9%A0%81%E9%9D%A2")
+            self.assertIn("UnicodeEncodeError", errors[0]["error"])
 
 
 if __name__ == "__main__":

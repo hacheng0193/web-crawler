@@ -56,6 +56,7 @@ python3 crawler.py \
 
 - `output/discovered.jsonl`：每發現一個新 URL 就立即 append 一行；可用行數計算 total discovered URLs
 - `output/crawled.jsonl`：每次 fetch 完成就立即 append 一行，包含 `request_started_at`（真正發出 HTML request 前的時間）、`fetched_at`、`success`、status、title、depth、parent URL、發現連結數與錯誤
+- `output/error.json`：所有 fetch、robots 或 worker 例外的錯誤記錄；每次錯誤發生後立即更新，內容維持有效的 JSON array
 - `output/discovered_pending.json`：執行結束時仍待處理的 discovered dict；已完成 fetch 的 URL 會從這個 pending dict 移除
 - `output/crawl_summary.json`：本次執行摘要，直接包含 `total_discovered` 與 `successful_crawled`
 

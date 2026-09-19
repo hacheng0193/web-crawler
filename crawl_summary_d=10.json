@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-09-16T03:36:14.418840+00:00",
+  "finished_at": "2026-09-18T03:36:20.151475+00:00",
+  "runtime_seconds": 172805.733,
+  "configured_runtime_seconds": 172800,
+  "seed_count": 500,
+  "total_discovered": 4981543,
+  "crawled_attempts": 147280,
+  "successful_crawled": 117266,
+  "failed_crawled": 30014,
+  "pending_discovered": 4834263,
+  "pages_recorded": 147280,
+  "frontier_remaining": 4834263,
+  "robots_hosts_cached": 104896,
+  "workers": 8,
+  "max_depth": 10
+}

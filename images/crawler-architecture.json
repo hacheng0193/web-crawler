@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "crawler.py 系統架構",
+    "quality_profile": "showcase",
+    "viewBox": [1390, 785],
+    "repository": {
+      "url": "https://github.com/hacheng0193/web-crawler.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "a9a2a1bb11932374a551c8fa3b78a31124af6295"
+    },
+    "views": [
+      { "id": "crawl_loop", "label": "爬取主迴圈", "focus": ["seed_input", "normalizer", "frontier", "workers", "http_client", "web", "parser"], "note": "從 seed 到下載、解析，再將新連結送回排程。" },
+      { "id": "politeness", "label": "禮貌與邊界控制", "focus": ["workers", "policy", "web"], "note": "robots.txt、每 host 延遲、逾時、頁數與執行時間共同限制爬取。" },
+      { "id": "persistence", "label": "狀態與輸出", "focus": ["normalizer", "runtime_state", "writers", "files"], "note": "記憶體狀態負責去重與統計，完成事件立即落盤。" }
+    ]
+  },
+  "components": [
+    { "id": "seed_input", "type": "frontend", "label": "CLI 與 Seed", "sublabel": "argparse + JSON", "pos": [35, 330], "size": [150, 68], "sources": [{ "path": "crawler.py", "line": 490, "end_line": 519, "label": "load_seeds / main" }] },
+    { "id": "normalizer", "type": "backend", "label": "URL 正規化與排程", "sublabel": "canonicalize + dedupe", "pos": [235, 330], "size": [175, 68], "sources": [{ "path": "crawler.py", "line": 30, "end_line": 63, "label": "normalize_url" }, { "path": "crawler.py", "line": 262, "end_line": 285, "label": "schedule" }] },
+    { "id": "frontier", "type": "messagebus", "label": "HostAwareFrontier", "sublabel": "每 host priority queue + 輪詢", "pos": [465, 330], "size": [180, 68], "sources": [{ "path": "crawler.py", "line": 154, "end_line": 210, "label": "HostAwareFrontier" }] },
+    { "id": "workers", "type": "backend", "label": "Worker Pool", "sublabel": "多執行緒 crawl loop", "pos": [700, 330], "size": [165, 68], "sources": [{ "path": "crawler.py", "line": 341, "end_line": 387, "label": "_worker" }, { "path": "crawler.py", "line": 434, "end_line": 478, "label": "run" }] },
+    { "id": "policy", "type": "security", "label": "禮貌與停止政策", "sublabel": "robots + delay + caps", "pos": [700, 105], "size": [165, 68], "sources": [{ "path": "crawler.py", "line": 287, "end_line": 324, "label": "robots / throttle" }] },
+    { "id": "http_client", "type": "backend", "label": "HTTP Client", "sublabel": "urllib opener / 2 MiB 上限", "pos": [940, 330], "size": [175, 68], "sources": [{ "path": "crawler.py", "line": 326, "end_line": 339, "label": "_fetch" }] },
+    { "id": "web", "type": "external", "label": "目標網站", "sublabel": "robots.txt + HTML", "pos": [1190, 330], "size": [155, 68] },
+    { "id": "parser", "type": "backend", "label": "LinkParser", "sublabel": "title + 最多 500 href", "pos": [940, 555], "size": [175, 68], "sources": [{ "path": "crawler.py", "line": 66, "end_line": 97, "label": "LinkParser" }] },
+    { "id": "runtime_state", "type": "database", "label": "執行期狀態", "sublabel": "URL sets + counters", "pos": [700, 555], "size": [165, 68], "sources": [{ "path": "crawler.py", "line": 213, "end_line": 260, "label": "Crawler state" }, { "path": "crawler.py", "line": 389, "end_line": 432, "label": "_record" }] },
+    { "id": "writers", "type": "backend", "label": "Thread-safe Writers", "sublabel": "JSONL + atomic JSON array", "pos": [465, 555], "size": [180, 68], "sources": [{ "path": "crawler.py", "line": 110, "end_line": 151, "label": "JSON writers" }] },
+    { "id": "files", "type": "database", "label": "檔案輸出", "sublabel": "crawl data + summary + errors", "pos": [235, 555], "size": [175, 68], "sources": [{ "path": "crawler.py", "line": 480, "end_line": 487, "label": "_write_outputs" }] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "單一 Python 程序", "wraps": ["normalizer", "frontier", "workers", "policy", "http_client", "parser", "runtime_state", "writers"] }
+  ],
+  "connections": [
+    { "from": "seed_input", "to": "normalizer", "label": "seed URL + priority", "variant": "emphasis", "labelDy": -28 },
+    { "from": "normalizer", "to": "frontier", "label": "去重後 enqueue", "variant": "emphasis", "labelDy": -28 },
+    { "from": "frontier", "to": "workers", "label": "依 host 公平 dequeue", "variant": "emphasis", "labelDy": -28 },
+    { "from": "workers", "to": "policy", "label": "抓取前檢查", "variant": "security" },
+    { "from": "policy", "to": "web", "label": "讀取 robots.txt", "variant": "security", "fromSide": "right", "toSide": "top", "via": [[900, 139], [1267.5, 139]] },
+    { "from": "workers", "to": "http_client", "label": "允許後 fetch", "variant": "emphasis" },
+    { "from": "http_client", "to": "web", "label": "HTTP request / response", "labelAt": [1152.5, 412] },
+    { "from": "http_client", "to": "parser", "label": "HTML body", "labelDy": 24 },
+    { "from": "parser", "to": "normalizer", "label": "新 href 回到排程", "variant": "dashed", "fromSide": "right", "toSide": "top", "via": [[1380, 589], [1380, 60], [322.5, 60]], "labelAt": [1050, 50] },
+    { "from": "workers", "to": "runtime_state", "label": "完成結果與計數", "labelDy": 24 },
+    { "from": "normalizer", "to": "runtime_state", "label": "discovered 狀態", "variant": "dashed", "fromSide": "bottom", "toSide": "left", "via": [[322.5, 470], [680, 470], [680, 589]], "labelAt": [505, 460] },
+    { "from": "runtime_state", "to": "writers", "label": "每筆立即持久化", "labelAt": [590, 650] },
+    { "from": "writers", "to": "files", "label": "JSONL / JSON", "variant": "emphasis", "labelDy": -28 }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "排程策略", "items": ["每個 host 維護自己的 priority queue；中央 scheduler 依 round-robin 或 weighted round-robin 選擇下一個 host", "每次只派出一個 URL；完成後將 host 放回隊尾，讓其他 host 先執行，在每個 host 每秒最多 0.2 次請求的限制下，避免工作執行緒閒置"] },
+    { "dot": "rose", "title": "安全與禮貌限制", "items": ["robots.txt 依 origin 快取", "delay、runtime、頁數、深度與 timeout 形成邊界"] },
+    { "dot": "emerald", "title": "輸出與可恢復性", "items": ["過濾掉重複出現過的 URLs；JSONL 每筆 flush", "error.json 維持有效 JSON；結束時寫出 summary"] }
+  ]
+}

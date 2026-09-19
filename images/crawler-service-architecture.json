@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Search Crawler 服務架構",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1370,
+      700
+    ],
+    "repository": {
+      "url": "https://github.com/hacheng0193/web-crawler.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "a9a2a1bb11932374a551c8fa3b78a31124af6295"
+    },
+    "views": [
+      {
+        "id": "discovery",
+        "label": "發現與排程",
+        "focus": [
+          "controller",
+          "normalizer",
+          "frontier",
+          "workers",
+          "parser"
+        ],
+        "note": "seed 進入正規化與去重，再由 host-aware frontier 公平分派給 worker。"
+      },
+      {
+        "id": "politeness",
+        "label": "禮貌與邊界",
+        "focus": [
+          "workers",
+          "politeness",
+          "http",
+          "web"
+        ],
+        "note": "robots.txt、每 host 間隔、timeout 與頁數上限共同決定是否真的發出請求。"
+      },
+      {
+        "id": "persistence",
+        "label": "狀態與輸出",
+        "focus": [
+          "workers",
+          "state",
+          "writers",
+          "outputs",
+          "controller"
+        ],
+        "note": "執行期狀態負責去重與計數，每筆結果立即落盤，結束時補上 summary。"
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "operator",
+      "type": "frontend",
+      "label": "營運入口",
+      "sublabel": "CLI argparse + seed 檔",
+      "pos": [
+        35,
+        100
+      ],
+      "size": [
+        165,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 500,
+          "end_line": 519,
+          "label": "main"
+        },
+        {
+          "path": "crawler.py",
+          "line": 490,
+          "end_line": 498,
+          "label": "load_seeds"
+        }
+      ]
+    },
+    {
+      "id": "politeness",
+      "type": "security",
+      "label": "禮貌與停止閘門",
+      "sublabel": "robots + 間隔 + 上限",
+      "pos": [
+        720,
+        100
+      ],
+      "size": [
+        175,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 287,
+          "end_line": 315,
+          "label": "robots 檢查與快取"
+        },
+        {
+          "path": "crawler.py",
+          "line": 317,
+          "end_line": 324,
+          "label": "_wait_for_host"
+        }
+      ]
+    },
+    {
+      "id": "controller",
+      "type": "backend",
+      "label": "爬取控制服務",
+      "sublabel": "生命週期 + runtime cap",
+      "pos": [
+        35,
+        330
+      ],
+      "size": [
+        165,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 434,
+          "end_line": 478,
+          "label": "Crawler.run"
+        }
+      ]
+    },
+    {
+      "id": "normalizer",
+      "type": "backend",
+      "label": "URL 正規化服務",
+      "sublabel": "canonicalize + 去重",
+      "pos": [
+        255,
+        330
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 30,
+          "end_line": 63,
+          "label": "normalize_url"
+        },
+        {
+          "path": "crawler.py",
+          "line": 262,
+          "end_line": 285,
+          "label": "schedule"
+        }
+      ]
+    },
+    {
+      "id": "frontier",
+      "type": "messagebus",
+      "label": "Frontier 排程服務",
+      "sublabel": "per-host 佇列 + round-robin",
+      "pos": [
+        490,
+        330
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 154,
+          "end_line": 210,
+          "label": "HostAwareFrontier"
+        }
+      ]
+    },
+    {
+      "id": "workers",
+      "type": "backend",
+      "label": "Worker Pool",
+      "sublabel": "8 執行緒 crawl loop",
+      "pos": [
+        720,
+        330
+      ],
+      "size": [
+        175,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 341,
+          "end_line": 387,
+          "label": "_worker"
+        }
+      ]
+    },
+    {
+      "id": "http",
+      "type": "backend",
+      "label": "HTTP 取得服務",
+      "sublabel": "urllib + 12s timeout",
+      "pos": [
+        960,
+        330
+      ],
+      "size": [
+        175,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 326,
+          "end_line": 339,
+          "label": "_fetch"
+        }
+      ]
+    },
+    {
+      "id": "web",
+      "type": "external",
+      "label": "目標網站",
+      "sublabel": "robots.txt + HTML",
+      "pos": [
+        1160,
+        330
+      ],
+      "size": [
+        160,
+        68
+      ]
+    },
+    {
+      "id": "outputs",
+      "type": "database",
+      "label": "輸出檔案",
+      "sublabel": "jsonl + json 產物",
+      "pos": [
+        255,
+        560
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 480,
+          "end_line": 487,
+          "label": "_write_outputs"
+        }
+      ]
+    },
+    {
+      "id": "writers",
+      "type": "backend",
+      "label": "持久化寫入服務",
+      "sublabel": "thread-safe + 立即 flush",
+      "pos": [
+        490,
+        560
+      ],
+      "size": [
+        180,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 110,
+          "end_line": 151,
+          "label": "JSONL / JSON writer"
+        }
+      ]
+    },
+    {
+      "id": "state",
+      "type": "database",
+      "label": "執行期狀態",
+      "sublabel": "URL 集合 + 計數器",
+      "pos": [
+        720,
+        560
+      ],
+      "size": [
+        175,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 213,
+          "end_line": 254,
+          "label": "Crawler 狀態"
+        },
+        {
+          "path": "crawler.py",
+          "line": 389,
+          "end_line": 432,
+          "label": "_record"
+        }
+      ]
+    },
+    {
+      "id": "parser",
+      "type": "backend",
+      "label": "連結解析服務",
+      "sublabel": "title + 最多 500 href",
+      "pos": [
+        960,
+        560
+      ],
+      "size": [
+        175,
+        68
+      ],
+      "sources": [
+        {
+          "path": "crawler.py",
+          "line": 66,
+          "end_line": 97,
+          "label": "LinkParser"
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "單一主機：Python 程序（零外部依賴）+ 輸出目錄",
+      "wraps": [
+        "operator",
+        "controller",
+        "normalizer",
+        "frontier",
+        "workers",
+        "politeness",
+        "http",
+        "parser",
+        "state",
+        "writers",
+        "outputs"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "from": "operator",
+      "to": "controller",
+      "label": "參數與 seed 清單",
+      "variant": "emphasis",
+      "labelAt": [
+        118,
+        249
+      ]
+    },
+    {
+      "from": "controller",
+      "to": "normalizer",
+      "label": "載入 seed 並啟動",
+      "variant": "emphasis",
+      "labelDy": -28
+    },
+    {
+      "from": "normalizer",
+      "to": "frontier",
+      "label": "去重後 enqueue",
+      "variant": "emphasis",
+      "labelDy": -28
+    },
+    {
+      "from": "frontier",
+      "to": "workers",
+      "label": "per-host 公平調度",
+      "variant": "emphasis",
+      "labelDy": -28
+    },
+    {
+      "from": "workers",
+      "to": "politeness",
+      "label": "抓取前檢查",
+      "variant": "security",
+      "labelAt": [
+        808,
+        250
+      ]
+    },
+    {
+      "from": "politeness",
+      "to": "web",
+      "label": "讀取 robots.txt",
+      "variant": "security",
+      "fromSide": "right",
+      "toSide": "top",
+      "via": [
+        [
+          1240,
+          134
+        ]
+      ],
+      "labelAt": [
+        1060,
+        124
+      ]
+    },
+    {
+      "from": "workers",
+      "to": "http",
+      "label": "允許後發出請求",
+      "variant": "emphasis",
+      "labelDy": -28
+    },
+    {
+      "from": "http",
+      "to": "web",
+      "label": "HTTP 請求 / 回應",
+      "labelDy": -28
+    },
+    {
+      "from": "http",
+      "to": "parser",
+      "label": "HTML 內容",
+      "labelAt": [
+        1048,
+        480
+      ]
+    },
+    {
+      "from": "parser",
+      "to": "normalizer",
+      "label": "新連結回到排程",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "top",
+      "via": [
+        [
+          1345,
+          594
+        ],
+        [
+          1345,
+          55
+        ],
+        [
+          345,
+          55
+        ]
+      ],
+      "labelAt": [
+        1000,
+        45
+      ]
+    },
+    {
+      "from": "workers",
+      "to": "state",
+      "label": "完成結果與計數",
+      "labelAt": [
+        808,
+        480
+      ]
+    },
+    {
+      "from": "state",
+      "to": "writers",
+      "label": "每筆立即持久化",
+      "labelDy": -28
+    },
+    {
+      "from": "writers",
+      "to": "outputs",
+      "label": "JSONL / JSON 檔案",
+      "variant": "emphasis",
+      "labelDy": -28
+    },
+    {
+      "from": "controller",
+      "to": "outputs",
+      "label": "結束時寫出 summary",
+      "variant": "dashed",
+      "labelAt": [
+        120,
+        500
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "排程與公平性",
+      "items": [
+        "同一 host 內依 priority 排序，host 之間 round-robin",
+        "全程以 all_discovered 集合去重，避免重複 enqueue"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "禮貌與停止邊界",
+      "items": [
+        "robots.txt 依 origin 快取後才決定是否抓取",
+        "每 host 間隔、timeout、頁數、深度與 runtime cap 同時生效"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "狀態與輸出",
+      "items": [
+        "discovered.jsonl 與 crawled.jsonl 每筆 flush，中途停止仍保留結果",
+        "error.json 維持有效 JSON array，結束時補寫 crawl_summary.json"
+      ]
+    }
+  ]
+}

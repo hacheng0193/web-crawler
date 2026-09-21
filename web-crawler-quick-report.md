@@ -48,15 +48,12 @@ Sources: [depth 3 results](./crawl_summary.json), [depth 10 results](./crawl_sum
 
 Increasing `max_depth` from **3 to 10** substantially increases discovery volume:
 
-\[
-2.66M \rightarrow 4.98M
-\]
+2.66M -> 4.98M
+
 
 At the same time, the number of crawl attempts decreases:
 
-\[
-397K \rightarrow 147K
-\]
+397K -> 147K
 
 Each crawl attempt produced approximately:
 
@@ -65,9 +62,9 @@ Each crawl attempt produced approximately:
 
 This indicates that deeper crawling produces substantially more discovery work per fetched page. The larger depth run also records more host origins with robots state:
 
-\[
-78.8K \rightarrow 104.9K
-\]
+
+78.8K -> 104.9K
+
 
 ### Current hypothesis
 
